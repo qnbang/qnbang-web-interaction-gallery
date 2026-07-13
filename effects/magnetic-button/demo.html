@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Magnetic Button — demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: #0c0d12; color: #e9e9ee; font: 14px/1.5 system-ui, sans-serif; display: grid; place-items: center; }
+  .stage { position: relative; width: 100%; height: 100vh; display: grid; place-items: center; }
+  .hint { position: fixed; top: 22px; left: 0; right: 0; text-align: center; color: #8b8b97; }
+  .hint b { color: #cfcfe0; }
+  .toggle { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); padding: 9px 18px; border-radius: 999px; border: 1px solid #2a2c38; background: #16171f; color: #ddd; cursor: pointer; }
+  .toggle:hover { border-color: #4a4d60; }
+  /* 자석 버튼 — 흰 테두리 속 빈 원형 CTA */
+  #cta {
+    width: 168px; height: 168px; border-radius: 999px;
+    border: 1.5px solid #fff; background: transparent; color: #fff;
+    font-size: 15px; letter-spacing: .01em; cursor: pointer;
+    display: grid; place-items: center; will-change: transform;
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <button id="cta">프로젝트 문의하기</button>
+  </div>
+  <div class="hint">버튼 위로 커서를 움직이면 <b>따라옵니다</b>. 누르면 <b>squish</b>. 아래 버튼으로 등장/퇴장 토글.</div>
+  <button class="toggle" id="toggle">hide / reveal 토글</button>
+
+  <script type="importmap">
+    { "imports": { "gsap": "https://esm.sh/gsap@3.12.5" } }
+  </script>
+  <script type="module">
+    import { MagneticButton } from './magnetic-button.js';
+    const btn = new MagneticButton('#cta', { startHidden: true });
+    btn.reveal(true);                       // 데모: 바로 등장
+    let on = true;
+    document.getElementById('toggle').addEventListener('click', () => {
+      on = !on; btn.reveal(on);
+    });
+  </script>
+</body>
+</html>

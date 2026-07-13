@@ -1,0 +1,22 @@
+{
+  "name": "scroll-images-reveal",
+  "title": "Scroll Images Reveal (Perspective)",
+  "description": "2열 그리드 이미지 카드들이 스크롤에 따라 3D 원근 변형(rotateX/Z·skewX·scaleY·blur/brightness/contrast)으로 리빌되는 효과 — 좌우 열 미러링",
+  "whenToUse": "포트폴리오·갤러리 이미지 묶음을 스크롤하며 입체적으로 펼칠 때. 카드가 깊이축에서 모였다 멀어지는 몰입형 갤러리.",
+  "tags": ["scroll", "reveal", "images", "gallery", "3d", "perspective", "framer-motion", "react"],
+  "framework": "react",
+  "entry": "scroll-images-reveal.tsx",
+  "export": "ScrollImagesReveal",
+  "type": "component",
+  "dependencies": { "react": ">=18", "framer-motion": ">=11" },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": ["React", "Framer Motion", "useScroll", "useTransform(multi-input filter)", "perspective 800px"],
+  "api": {
+    "props": "images(필수: string[]), caption='Perspective scroll effect', className",
+    "note": "스무스 스크롤(Lenis 등)과 함께 쓰면 느낌이 더 매끈. 원본은 GSAP ScrollTrigger 변형도 제공."
+  },
+  "origin": "Skiper UI skiper33 (https://skiper-ui.com/v1/skiper33) Framer Motion 변형 충실 포팅. 스크롤 transform·구간·수치 원본 그대로.",
+  "license": "Based on Skiper UI (free) — 자유 사용·수정 가능, Skiper UI 출처표기 필수. https://skiper-ui.com",
+  "created": "2026-06-22"
+}

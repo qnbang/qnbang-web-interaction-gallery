@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Smooth Cursor — demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0f0f0f; color: #fff; font: 15px/1.6 "Pretendard", system-ui, sans-serif; }
+  header { padding: 32px 32px 12px; }
+  header h1 { margin: 0 0 6px; font-size: 20px; }
+  header p { margin: 0; color: #9a9a9a; font-size: 13px; }
+
+  section { padding: 56px 40px; border-top: 1px solid rgba(255,255,255,.08); }
+  section h2 { margin: 0 0 28px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #777; }
+  .move { height: 40vh; min-height: 280px; display: flex; align-items: center; justify-content: center;
+          color: #555; font-size: 14px; border: 1px dashed rgba(255,255,255,.12); border-radius: 14px; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; }
+  a.link { color: inherit; text-decoration: none; font-size: 34px; font-weight: 600; letter-spacing: -.02em; }
+  .circle { width: 120px; height: 120px; border-radius: 50%; background: transparent; border: none;
+            color: #fff; font: inherit; font-size: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Smooth Cursor</h1>
+  <p>점이 마우스를 살짝 딜레이로 따라오고, 빠르게 멀리 움직이면 진행 방향으로 늘어납니다(스트레치). 아래 원형 버튼에 닿으면 점이 그 크기로 퍼져 버튼을 채우고, 그 상태로 쫀득하게 따라옵니다.</p>
+</header>
+
+<section>
+  <h2>이동 · 스트레치</h2>
+  <div class="move">이 영역에서 마우스를 빠르게 휘저어 보세요 — 점이 늘어납니다</div>
+</section>
+
+<section>
+  <h2>라벨 링크 (data-cursor-text / -icon)</h2>
+  <div class="row" style="flex-direction:column; align-items:flex-start; gap:6px;">
+    <a class="link" href="#" data-cursor-text="자세히 →">Expertise</a>
+    <a class="link" href="#" data-cursor-text="이동 ↗">About us</a>
+    <a class="link" href="#" data-cursor-icon="▶">Showreel</a>
+  </div>
+</section>
+
+<section>
+  <h2>채움 (cursor-target 원형 버튼)</h2>
+  <div class="row">
+    <a class="circle" href="#">Work</a>
+    <a class="circle" href="#">Team</a>
+  </div>
+</section>
+
+<script type="module">
+  import { SmoothCursor } from './smooth-cursor.js';
+  import { CursorTarget } from '../cursor-target/cursor-target.js';
+  const cursor = new SmoothCursor({ color: '#ffffff' });
+  // 원형 버튼: 커서가 그 크기로 퍼져 채움(자석 위치 동기화 위해 cursor 전달)
+  const ct = new CursorTarget('.circle', { primary: '#0f0f0f', ring: 'rgba(255,255,255,.3)', cursor });
+  window.__cursor = cursor; window.__ct = ct;
+</script>
+</body>
+</html>

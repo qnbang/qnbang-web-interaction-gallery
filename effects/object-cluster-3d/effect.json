@@ -1,0 +1,47 @@
+{
+  "name": "object-cluster-3d",
+  "title": "Object Cluster 3D",
+  "description": "3D 오브젝트(GLTF·구체) 클러스터가 방사형 버스트로 등장해 부유·텀블링하고, 마우스로 밀리며, 스크롤로 카메라가 꿰뚫고 통과하는 효과(실시간 큐브맵 반사)",
+  "whenToUse": "히어로/인트로에 브랜드 오브젝트(과일·제품·로고 입자)를 구름처럼 띄워 생동감 있는 3D 클러스터를 만들 때. 스크롤로 안을 통과하는 몰입 인트로.",
+  "tags": [
+    "3d",
+    "cluster",
+    "webgl",
+    "three",
+    "physics",
+    "mouse",
+    "scroll",
+    "hero",
+    "ibl"
+  ],
+  "framework": "vanilla",
+  "entry": "object-cluster-3d.js",
+  "export": "ObjectCluster3D",
+  "type": "class",
+  "dependencies": {
+    "three": ">=0.160"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Three.js",
+    "WebGL",
+    "CubeCamera IBL",
+    "MeshPhysicalMaterial",
+    "onBeforeCompile grading"
+  ],
+  "api": {
+    "constructor": "new ObjectCluster3D(container|selector, options)",
+    "methods": [
+      "setProgress(0~1)",
+      "start()",
+      "stop()",
+      "resize()",
+      "setOptions(partial)",
+      "destroy()"
+    ],
+    "callbacks": "onHover(isHover) — 커서가 오브젝트 반응 반경에 들어왔는지",
+    "options": "count=24, rMin/rMax, cloudX/Y/Z, modelUrl(null=구체), brand/tint/shadowLift, mouseRadiusNdc/mousePush/mouseSweep, approachStart/approachEnd/passEnd, autoStart, lowPower(null=자동)",
+    "note": "modelUrl 사용 시 importmap에 three/addons/ 매핑 필요(GLTFLoader 동적 import). 구체 폴백은 코어 three만."
+  }
+}

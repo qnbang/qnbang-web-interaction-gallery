@@ -1,0 +1,61 @@
+{
+  "name": "smooth-cursor",
+  "title": "Smooth Cursor",
+  "description": "점 하나가 마우스를 살짝 딜레이로 따라오며 속도에 따라 진행 방향으로 늘어나는(squish/stretch+회전) 커서. cursor-target에 닿으면 점이 그 크기로 퍼져(useElementSize) 버튼을 채우고, 채운 채로 포인터를 따라 morph한다. (makepill Cursor.js onTick·magnetize 추출 재구현)",
+  "whenToUse": "브랜딩이 강한 랜딩/포트폴리오에서 마우스 자체를 인터랙션 요소로 쓰고 싶을 때. cursor-target 와 함께 쓰면 버튼이 색으로 채워지는 makepill식 효과가 완성됨.",
+  "tags": [
+    "cursor",
+    "mouse",
+    "pointer",
+    "follower",
+    "lerp",
+    "squish",
+    "stretch",
+    "morph",
+    "interaction",
+    "transform"
+  ],
+  "entry": "smooth-cursor.js",
+  "export": "SmoothCursor",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Vanilla JS",
+    "requestAnimationFrame",
+    "CSS transition"
+  ],
+  "api": {
+    "constructor": "new SmoothCursor(container = document.body, options) — 첫 인자로 옵션 객체만 넘겨도 됨",
+    "options": [
+      "size",
+      "color",
+      "textColor",
+      "mainSpeed",
+      "scaleSpeed",
+      "morphLevel",
+      "morphLevelHover",
+      "morphMax",
+      "fillSelector",
+      "fillVar",
+      "labelSelector",
+      "labelAttr",
+      "iconAttr",
+      "hoverScale",
+      "themeAttr",
+      "themes",
+      "blendDifference",
+      "hideNative",
+      "zIndex",
+      "respectReducedMotion"
+    ],
+    "methods": [
+      "start()",
+      "stop()",
+      "destroy()",
+      "setTheme(name)",
+      "setOptions(partial)"
+    ]
+  }
+}

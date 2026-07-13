@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gallery 3D Scroll — demo</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0a0a0a; color: #eaeaea; font: 13px/1.5 system-ui, sans-serif; }
+  /* 고정 캔버스 무대 — 스크롤은 아래 spacer가 만든다 */
+  #stage { position: fixed; inset: 0; z-index: 0; }
+  .spacer { height: 600vh; position: relative; z-index: 1; pointer-events: none; }
+  .hint { position: fixed; top: 22px; left: 0; right: 0; text-align: center; color: #9a9a9a; z-index: 2; }
+  .hint b { color: #fff; }
+</style>
+</head>
+<body>
+  <div id="stage"></div>
+  <div class="spacer"></div>
+  <div class="hint"><b>스크롤</b>하면 카메라가 이미지 카드 필드를 통과해 비행합니다.</div>
+
+  <script type="importmap">
+    { "imports": { "three": "../../shared/vendor/three.module.min.js" } }
+  </script>
+  <script type="module">
+    import { GalleryDolly } from './gallery-3d-scroll.js';
+    const images = Array.from({ length: 8 }, (_, i) => `./assets/images/g${i + 1}.jpg`);
+    const gallery = new GalleryDolly('#stage', { images, minPlanes: 18, cornerRadius: 0.06 });
+
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      gallery.setProgress(max > 0 ? window.scrollY / max : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "gooey-menu",
+  "title": "Gooey Menu",
+  "description": "로고에 호버하면 위로 끈적하게(SVG goo 필터) 분리되며 정보 패널이 펼쳐지는 효과(Next.js 로고 스타일 dev 패널)",
+  "whenToUse": "CTA·상태 인디케이터·로고 인터랙션. 작은 원형 버튼에서 패널이 액체처럼 솟아오르는 손맛.",
+  "tags": [
+    "gooey",
+    "svg-filter",
+    "blob",
+    "reveal",
+    "logo",
+    "framer-motion",
+    "react"
+  ],
+  "framework": "react",
+  "entry": "gooey-menu.tsx",
+  "export": "GooeyMenu",
+  "type": "component",
+  "dependencies": {
+    "react": ">=18",
+    "framer-motion": ">=11"
+  },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": [
+    "React",
+    "Framer Motion",
+    "SVG goo(feGaussianBlur 4.4 + feColorMatrix 20 -7)",
+    "spring 300/30"
+  ],
+  "api": {
+    "props": "rows={label,value,danger?}[], logo?, color='#000', className"
+  }
+}

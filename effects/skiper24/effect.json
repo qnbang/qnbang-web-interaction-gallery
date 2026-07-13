@@ -1,0 +1,48 @@
+{
+  "name": "skiper24",
+  "title": "Tik Tik Color List",
+  "description": "스크롤하면 항목이 차례로 활성화되며 배경색이 바뀌고 우하단 프리뷰 이미지가 스왑되는 컬러 리스트(틱 사운드·무한 스크롤)",
+  "whenToUse": "프로젝트/작품 목록을 스크롤 내러티브로 보여줄 때. 항목마다 대표색·대표이미지가 있고, 스크롤에 따라 풀스크린 분위기(배경색)와 프리뷰가 전환되는 인덱스/아카이브 섹션.",
+  "tags": [
+    "scroll",
+    "scrolltrigger",
+    "gsap",
+    "list",
+    "color",
+    "sound",
+    "infinite-scroll",
+    "react"
+  ],
+  "framework": "react",
+  "entry": "skiper24.tsx",
+  "export": "TikTikColorList",
+  "type": "component",
+  "dependencies": {
+    "react": ">=18",
+    "framer-motion": ">=11",
+    "gsap": ">=3.12",
+    "use-sound": ">=4",
+    "clsx": ">=2",
+    "tailwind-merge": ">=2"
+  },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": [
+    "React",
+    "GSAP ScrollTrigger",
+    "Framer Motion",
+    "use-sound",
+    "Tailwind"
+  ],
+  "api": {
+    "props": {
+      "projects": "Project[] (id,name,description,badge,bgColor,image) — 필수",
+      "showPreview": "boolean=true — 우하단 드래그 프리뷰 카드",
+      "previewSize": "'sm'|'md'|'lg'=lg",
+      "enableSound": "boolean=true — 항목 전환 tick",
+      "soundSrc": "string='/sfx/tick.wav'",
+      "infiniteScroll": "boolean=true — 10세트 반복 + 바닥 근처 5세트 추가",
+      "scrollThreshold": "number=1000 — 추가 로드 임계 px"
+    }
+  }
+}

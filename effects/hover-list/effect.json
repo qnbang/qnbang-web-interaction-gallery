@@ -1,0 +1,34 @@
+{
+  "name": "hover-list",
+  "title": "Hover List",
+  "description": "리스트 항목 hover 인터랙션 — 행 와이프 채움 + 텍스트 들여쓰기 + 화살표 디블러 슬라이드인 + 합성 blip 사운드",
+  "whenToUse": "서비스/메뉴/네비 목록을 인터랙티브하게. 행마다 hover 시 채워지고 화살표가 들어오며 청각 피드백을 주고 싶을 때(에이전시·포트폴리오 인덱스).",
+  "tags": [
+    "hover",
+    "list",
+    "menu",
+    "nav",
+    "wipe",
+    "sound",
+    "web-audio"
+  ],
+  "framework": "vanilla",
+  "entry": "hover-list.js",
+  "export": "HoverList",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Audio",
+    "CSS transitions"
+  ],
+  "api": {
+    "constructor": "new HoverList(root|selector, options)",
+    "methods": [
+      "destroy()"
+    ],
+    "options": "itemSelector='.hl-item', arrow='→', sound=true, soundVolume=0.05, desktopOnly=true",
+    "css": "hover-list.css 동봉 필수(.hl-item/.hl-heading/.hl-arrow). 색은 .hl-list 의 --hl-* 변수로 덮어쓰기"
+  }
+}

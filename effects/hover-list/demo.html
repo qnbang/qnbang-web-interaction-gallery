@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hover List — demo</title>
+<link rel="stylesheet" href="./hover-list.css" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: #f3f1ec; color: #1a1a4a; font-family: system-ui, sans-serif; padding: 8vh 6vw; }
+  h1 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #9a988f; font-weight: 600; margin: 0 0 4vh; }
+  .hint { margin-top: 5vh; font-size: 13px; color: #9a988f; }
+</style>
+</head>
+<body>
+  <h1>Our Service</h1>
+  <div class="hl-list" id="list">
+    <div class="hl-item">Brand Identity</div>
+    <div class="hl-item">Web Design</div>
+    <div class="hl-item">Motion &amp; Interaction</div>
+    <div class="hl-item">Art Direction</div>
+    <div class="hl-item">Editorial</div>
+  </div>
+  <p class="hint">항목 위로 커서를 올리면 행이 와이프로 채워지고 화살표가 디블러되며 들어옵니다 (+ 합성 '톡' 사운드, 첫 클릭 이후).</p>
+
+  <script type="module">
+    import { HoverList } from './hover-list.js';
+    new HoverList('#list', { itemSelector: '.hl-item' });
+  </script>
+</body>
+</html>

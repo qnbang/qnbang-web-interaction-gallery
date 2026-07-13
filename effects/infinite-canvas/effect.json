@@ -1,0 +1,22 @@
+{
+  "name": "infinite-canvas",
+  "title": "Infinite Canvas",
+  "description": "휠·드래그·터치로 끝없이 패닝되는 무한 타일 이미지 그리드 — 2×2 복제로 seamless wrap, GSAP Observer + quickTo 관성",
+  "whenToUse": "무드보드·갤러리·작업 모음을 Figma식 무한 캔버스로 탐색하게 할 때. 어디로 끌어도 끊김 없이 이어지는 이미지 보드.",
+  "tags": ["infinite", "canvas", "drag", "pan", "wheel", "gsap", "observer", "gallery", "react"],
+  "framework": "react",
+  "entry": "infinite-canvas.tsx",
+  "export": "InfiniteCanvas",
+  "type": "component",
+  "dependencies": { "react": ">=18", "gsap": ">=3.12" },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": ["React", "GSAP", "Observer plugin", "quickTo + utils.wrap/unitize"],
+  "api": {
+    "props": "imageClassName='w-[25vw] lg:w-[15vw]', numberOfImages=15, imageRootPath='/images/lummi', gap='10vw', className",
+    "note": "이미지는 imageRootPath/img1.png … imgN.png. GSAP Observer 는 gsap 패키지에 포함(gsap/Observer)."
+  },
+  "origin": "Skiper UI skiper73 (https://skiper-ui.com/v1/skiper73) 충실 포팅. 메커니즘·이징·수치 원본 그대로.",
+  "license": "Based on Skiper UI (free) — 자유 사용·수정 가능, Skiper UI 출처표기 필수. https://skiper-ui.com",
+  "created": "2026-06-22"
+}

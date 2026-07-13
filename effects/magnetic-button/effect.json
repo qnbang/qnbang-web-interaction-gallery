@@ -1,0 +1,38 @@
+{
+  "name": "magnetic-button",
+  "title": "Magnetic Button",
+  "description": "커서를 따라오는 자석 버튼 — elastic reveal 등장 + 마그네틱 추종 + 클릭 squish",
+  "whenToUse": "CTA·플로팅 액션 버튼에 생동감을 줄 때. 특정 영역(스크롤·근접)에서 통통 튀며 등장하고 커서를 따라오게 하고 싶을 때.",
+  "tags": [
+    "button",
+    "magnetic",
+    "cursor",
+    "cta",
+    "gsap",
+    "elastic",
+    "hover"
+  ],
+  "framework": "vanilla",
+  "entry": "magnetic-button.js",
+  "export": "MagneticButton",
+  "type": "class",
+  "dependencies": {
+    "gsap": ">=3.12"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "GSAP",
+    "quickTo"
+  ],
+  "api": {
+    "constructor": "new MagneticButton(el|selector, options)",
+    "methods": [
+      "reveal(on=true)",
+      "hide()",
+      "setOptions(partial)",
+      "destroy()"
+    ],
+    "options": "magnet=0.28, hiddenScale=0.6, showEase='elastic.out(1,0.5)', pressScale=0.92, startHidden=true"
+  }
+}

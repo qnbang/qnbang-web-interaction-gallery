@@ -1,0 +1,52 @@
+{
+  "name": "cursor-target",
+  "title": "Cursor Target",
+  "description": "속 빈 버튼: hover 시 커서가 닿은 지점에서 버튼 모양 그대로(원/알약/사각) 색이 scale 0→1로 차오르고(선명·모양정확), 둘레 링이 scale3d(0,0,1)로 수축하며 글자색이 primary로 전환되고 라벨이 커서를 향해 자석으로 끌려간다. (makepill CursorTarget 동작 재구현)",
+  "whenToUse": "makepill식 '닿은 곳에서 색이 차오르는' 버튼을 만들 때. smooth-cursor와 함께 쓰면 점이 채움으로 녹아드는 연출이 완성됨(어떤 버튼 모양이든 정확하게 채워짐).",
+  "tags": [
+    "cursor",
+    "button",
+    "hover",
+    "fill",
+    "magnetic",
+    "ring",
+    "link",
+    "micro-interaction",
+    "transform",
+    "css"
+  ],
+  "entry": "cursor-target.js",
+  "export": "CursorTarget",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Vanilla JS",
+    "CSS transition",
+    "pseudo-element ::after"
+  ],
+  "api": {
+    "constructor": "new CursorTarget(container = document, options) — 옵션 객체만 단독으로 넘겨도 됨",
+    "options": [
+      "targets",
+      "fill",
+      "primary",
+      "ring",
+      "ringWidth",
+      "strength",
+      "disabledStrength",
+      "lerpSpeed",
+      "raiseZ",
+      "cursor",
+      "magnetic"
+    ],
+    "methods": [
+      "refresh()",
+      "add(el)",
+      "start()",
+      "stop()",
+      "destroy()"
+    ]
+  }
+}

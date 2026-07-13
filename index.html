@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>웹 인터랙션 컬렉션</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0a0a0a; color: #eaeaea; font: 14px/1.55 "Pretendard", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  header { padding: 40px 32px 12px; max-width: 1200px; margin: 0 auto; }
+  header h1 { margin: 0 0 8px; font-size: 24px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: #9a9a9a; }
+  header .meta { margin-top: 10px; font-size: 12px; color: #6c6c6c; }
+  header a { color: #bdbdbd; }
+  main { max-width: 1200px; margin: 0 auto; padding: 20px 32px 80px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .card { border: 1px solid #1c1c1c; border-radius: 14px; overflow: hidden; background: #101010; transition: border-color .2s, transform .2s; display: flex; flex-direction: column; }
+  .card:hover { border-color: #383838; transform: translateY(-2px); }
+  .thumb { aspect-ratio: 16/10; background: #000; position: relative; overflow: hidden; border-bottom: 1px solid #1c1c1c; }
+  .thumb iframe { width: 200%; height: 200%; border: 0; transform: scale(0.5); transform-origin: top left; pointer-events: none; background: #000; }
+  .thumb .noimg { position: absolute; inset: 0; display: grid; place-items: center; color: #444; font-size: 13px; letter-spacing: .06em; }
+  .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .body h2 { margin: 0; font-size: 16px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px; }
+  .fw { font-size: 9.5px; letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; border: 1px solid; font-weight: 600; }
+  .fw-vanilla { color: #d9c47a; border-color: #4a4123; background: #1f1b10; }
+  .fw-react { color: #61dafb; border-color: #1e4654; background: #0e2730; }
+  .fw-vue { color: #6cd9a0; border-color: #234a35; background: #102018; }
+  .body p { margin: 0; color: #9a9a9a; font-size: 13px; flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-size: 10.5px; color: #aaa; background: #1a1a1a; border: 1px solid #262626; border-radius: 20px; padding: 2px 8px; }
+  .actions { display: flex; gap: 8px; margin-top: 4px; }
+  .actions a { flex: 1; text-align: center; text-decoration: none; font-size: 13px; padding: 8px; border-radius: 8px; border: 1px solid #2a2a2a; color: #ddd; }
+  .actions a.primary { background: #fff; color: #000; border-color: #fff; font-weight: 600; }
+  .actions a:hover { border-color: #4a4a4a; }
+  .actions a.primary:hover { background: #e6e6e6; }
+  .actions button { flex: 1; font: inherit; font-size: 12.5px; padding: 8px; border-radius: 8px; border: 1px solid #2a2a2a; color: #ddd; background: transparent; cursor: pointer; }
+  .actions button:hover { border-color: #4a4a4a; }
+  .actions button:disabled { opacity: .55; cursor: default; }
+  .actions button.ok { color: #7ee787; border-color: #2ea043; background: #0c1f12; }
+  .empty { color: #777; padding: 40px 0; }
+  code { background: #161616; padding: 1px 6px; border-radius: 4px; color: #cfcfcf; }
+</style>
+</head>
+<body>
+<header>
+  <h1>웹 인터랙션 컬렉션</h1>
+  <p>재사용 가능한 웹 인터랙션 효과 라이브러리 모음. 각 카드의 <b>데모</b>를 열어 마우스로 만져보세요.</p>
+  <div class="meta">새 효과: <code>node new-effect.mjs &lt;name&gt; "&lt;Title&gt;" "&lt;설명&gt;"</code> → 채우고 → <code>node build-registry.mjs</code> · <a href="./CONVENTIONS.md">규칙</a> · <a href="./README.md">README</a></div>
+  <div class="meta" style="margin-top:6px">⚛ <b>react</b> 효과 데모는 lab 서버(8797)에서 구동: <code>node start-servers.mjs</code> (갤러리 9821 + lab 8797 동시 기동)</div>
+</header>
+<main>
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" hidden>아직 효과가 없습니다. <code>node new-effect.mjs</code>로 추가하세요.</div>
+</main>
+
+<script>
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  fetch('./registry.json?' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(reg => {
+      const grid = document.getElementById('grid');
+      const list = reg.effects || [];
+      if (!list.length) { document.getElementById('empty').hidden = false; return; }
+      document.querySelector('header .meta').insertAdjacentHTML('beforeend', ` · 효과 ${list.length}개`);
+      // react 효과는 정적 빌드 lab 서버(단일 프로세스)에서 실제 구동된다. vanilla 는 같은 정적 서버(importmap)에서 demo.html.
+      // lab은 localhost 전용 — 배포판(GitHub Pages 등)에서는 react 데모 대신 안내를 띄운다.
+      const LAB = 'http://localhost:8797';
+      const IS_LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname);
+      grid.innerHTML = list.map((e, i) => {
+        const fw = (e.framework || 'vanilla').toLowerCase();
+        const isReact = fw === 'react';
+        // 라이브 데모 URL: react=lab 라우트(skiper24는 루트) / vanilla=폴더 demo.html
+        const demo = isReact
+          ? (IS_LOCAL ? (e.name === 'skiper24' ? `${LAB}/` : `${LAB}/lab/${e.name}/`) : null)
+          : (e.hasDemo ? `${e.path}/${e.demo}` : null);
+        // 썸네일: react=라이브 iframe(실제 작동) / vanilla=preview.png 또는 demo iframe
+        const thumb = isReact
+          ? (demo
+            ? `<div class="thumb"><iframe loading="lazy" src="${demo}"></iframe></div>`
+            : `<div class="thumb"><div class="noimg">react 데모 — 로컬 lab 전용</div></div>`)
+          : (e.hasPreview
+            ? `<img class="thumb" src="${e.path}/preview.png" alt="" style="width:100%;display:block;object-fit:cover">`
+            : (demo
+              ? `<div class="thumb"><iframe loading="lazy" src="${demo}"></iframe></div>`
+              : `<div class="thumb"><div class="noimg">no preview</div></div>`));
+        const fwBadge = `<span class="fw fw-${esc(fw)}">${esc(fw)}</span>`;
+        return `<article class="card">
+          ${thumb}
+          <div class="body">
+            <h2>${esc(e.title || e.name)} ${fwBadge}</h2>
+            <p>${esc(e.description || '')}</p>
+            <div class="tags">${(e.tags || []).slice(0, 6).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+            <div class="actions">
+              ${demo ? `<a class="primary" href="${demo}" target="_blank" rel="noopener">데모</a>` : ''}
+              <a href="${e.path}/README.md" target="_blank" rel="noopener">README</a>
+            </div>
+            <div class="actions">
+              <button class="act-copy" data-idx="${i}" title="${esc(e.entry || '')} 소스를 클립보드에 복사">📋 코드 복사</button>
+              <button class="act-dl" data-idx="${i}" title="효과 폴더 전체를 zip 으로 다운로드">⬇ 다운로드 (zip)</button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+      // 복사·다운로드 버튼 동작 연결
+      grid.querySelectorAll('.act-copy').forEach(b => b.addEventListener('click', () => copyCode(list[+b.dataset.idx], b)));
+      grid.querySelectorAll('.act-dl').forEach(b => b.addEventListener('click', () => downloadZip(list[+b.dataset.idx], b)));
+    })
+    .catch(() => { document.getElementById('empty').hidden = false; document.getElementById('empty').innerHTML = 'registry.json이 없습니다. <code>node build-registry.mjs</code>를 실행하세요.'; });
+
+  // ── 코드 복사 / 다운로드 ──────────────────────────────────────────────
+  function flash(btn, msg) {
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    btn.textContent = msg; btn.classList.add('ok');
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => { btn.textContent = btn.dataset.label; btn.classList.remove('ok'); }, 1500);
+  }
+  async function copyCode(e, btn) {
+    try {
+      const txt = await (await fetch(`${e.path}/${e.entry}?` + Date.now())).text();
+      await navigator.clipboard.writeText(txt);
+      flash(btn, `✓ 복사됨 (${e.entry})`);
+    } catch (err) { console.error(err); flash(btn, '복사 실패'); }
+  }
+  async function downloadZip(e, btn) {
+    const files = (e.files && e.files.length) ? e.files : [e.entry];
+    const label = btn.dataset.label || btn.textContent; btn.dataset.label = label;
+    btn.disabled = true; btn.textContent = '받는 중…';
+    try {
+      const entries = [];
+      for (const f of files) {
+        const buf = new Uint8Array(await (await fetch(`${e.path}/${f}?` + Date.now())).arrayBuffer());
+        entries.push({ name: `${e.name}/${f}`, data: buf });
+      }
+      triggerDownload(makeZip(entries), `${e.name}.zip`);
+      btn.disabled = false; flash(btn, `✓ ${files.length}개 파일`);
+    } catch (err) { console.error(err); btn.disabled = false; flash(btn, '다운로드 실패'); }
+  }
+  function triggerDownload(blob, name) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+  // 무압축(stored) ZIP — 외부 라이브러리 없이 오프라인 동작
+  function crc32(buf) {
+    let t = crc32._t;
+    if (!t) { t = crc32._t = new Uint32Array(256); for (let i = 0; i < 256; i++) { let c = i; for (let k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1); t[i] = c >>> 0; } }
+    let c = 0xFFFFFFFF;
+    for (let i = 0; i < buf.length; i++) c = (c >>> 8) ^ t[(c ^ buf[i]) & 0xFF];
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+  function makeZip(files) {
+    const enc = new TextEncoder(); const parts = []; const central = []; let offset = 0;
+    for (const f of files) {
+      const nb = enc.encode(f.name), crc = crc32(f.data), sz = f.data.length;
+      const lh = new DataView(new ArrayBuffer(30));
+      lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(8, 0, true);
+      lh.setUint32(14, crc, true); lh.setUint32(18, sz, true); lh.setUint32(22, sz, true);
+      lh.setUint16(26, nb.length, true);
+      parts.push(new Uint8Array(lh.buffer), nb, f.data);
+      const ch = new DataView(new ArrayBuffer(46));
+      ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true);
+      ch.setUint32(16, crc, true); ch.setUint32(20, sz, true); ch.setUint32(24, sz, true);
+      ch.setUint16(28, nb.length, true); ch.setUint32(42, offset, true);
+      central.push(new Uint8Array(ch.buffer), nb);
+      offset += 30 + nb.length + sz;
+    }
+    let cSize = 0; for (const c of central) cSize += c.length;
+    const eo = new DataView(new ArrayBuffer(22));
+    eo.setUint32(0, 0x06054b50, true);
+    eo.setUint16(8, files.length, true); eo.setUint16(10, files.length, true);
+    eo.setUint32(12, cSize, true); eo.setUint32(16, offset, true);
+    return new Blob([...parts, ...central, new Uint8Array(eo.buffer)], { type: 'application/zip' });
+  }
+</script>
+</body>
+</html>

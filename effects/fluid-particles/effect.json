@@ -1,0 +1,48 @@
+{
+  "name": "fluid-particles",
+  "title": "Fluid Particles",
+  "description": "텍스트·이미지·좌표를 입자 군집으로 만들고, 마우스가 움직이면 그 이동 속도를 격자 속도장에 주입해 입자가 흐름을 타고 마우스를 따라 흩어졌다가 제자리로 복귀하는 유체 인터랙션.",
+  "whenToUse": "히어로의 텍스트/로고를 입자로 표현하고 마우스로 휘젓는 유체 인터랙션을 줄 때. 가산 블렌딩 발광 효과가 어울리는 다크 배경 섹션.",
+  "tags": [
+    "particles",
+    "fluid",
+    "mouse",
+    "pointer",
+    "webgl",
+    "three",
+    "hero",
+    "text",
+    "additive"
+  ],
+  "entry": "fluid-particles.js",
+  "export": "FluidParticles",
+  "type": "class",
+  "dependencies": {
+    "three": ">=0.160"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Three.js",
+    "WebGL",
+    "Canvas 2D 샘플링",
+    "CPU 격자 유체 시뮬레이션"
+  ],
+  "api": {
+    "constructor": "new FluidParticles(container, options)",
+    "methods": [
+      "start()",
+      "stop()",
+      "setOpacity(v)",
+      "setColor(c)",
+      "setSource(opts)",
+      "resize()",
+      "destroy()"
+    ],
+    "sources": [
+      "text",
+      "image",
+      "points"
+    ]
+  }
+}

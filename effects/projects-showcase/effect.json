@@ -1,0 +1,34 @@
+{
+  "name": "projects-showcase",
+  "title": "Projects Showcase",
+  "description": "프로젝트 리스트 호버 시 드래그 프리뷰 이미지 교체(layoutId), 클릭 시 타이틀·이미지가 리스트→상세로 공유요소 모핑",
+  "whenToUse": "에이전시·포트폴리오 인덱스. 호버 프리뷰 + 클릭하면 상세로 매끄럽게 확장되는 layoutId 전환.",
+  "tags": [
+    "projects",
+    "showcase",
+    "layoutid",
+    "shared-element",
+    "drag",
+    "framer-motion",
+    "react"
+  ],
+  "framework": "react",
+  "entry": "projects-showcase.tsx",
+  "export": "ProjectsShowcase",
+  "type": "component",
+  "dependencies": {
+    "react": ">=18",
+    "framer-motion": ">=11"
+  },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": [
+    "React",
+    "Framer Motion",
+    "layoutId 공유요소 전환",
+    "staggerChildren"
+  ],
+  "api": {
+    "props": "projects={title,img}[], detail?, foreground='#111', background='#fff', className"
+  }
+}

@@ -1,0 +1,70 @@
+/* HoverList 시각 규칙 — JS 가 주입한 .hl-item > .hl-heading + .hl-arrow 에 적용.
+   색·이징은 :root 변수로 노출(소비측에서 덮어쓰기). 다크/라이트 모두 글자색은 .hl-item 상속. */
+.hl-list {
+  --hl-fill: #ffffff;           /* hover 행 채움색 */
+  --hl-text: rgba(20, 20, 30, 0.45); /* 평상시 글자색 */
+  --hl-text-hover: #1a1a4a;     /* hover 글자색(채움 위) */
+  --hl-line: rgba(0, 0, 0, 0.1);/* 구분선 */
+  --hl-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --hl-t-slow: 0.65s;
+  --hl-t-mid: 0.3s;
+}
+
+.hl-item {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--hl-text);
+  padding: 0.6em 0.5em 0.6em 0;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--hl-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.hl-item:first-child { border-top: 1px solid var(--hl-line); }
+
+/* hover 시 행 영역이 왼→오 와이프로 채워진다(글자 뒤). */
+.hl-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--hl-fill);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--hl-t-slow) var(--hl-ease);
+  will-change: transform;
+}
+.hl-item:hover::before { transform: scaleX(1); }
+.hl-item:hover { color: var(--hl-text-hover); }
+
+/* 서비스명(heading) — hover 시 우측으로 살짝 이동. 색은 item 상속. */
+.hl-heading {
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform var(--hl-t-slow) var(--hl-ease), color var(--hl-t-mid) ease;
+}
+.hl-item:hover .hl-heading { transform: translateX(2.6rem); }
+
+/* 화살표(→) — 휴지 시 opacity0·blur·좌측, hover 시 디블러되며 슬라이드-인. */
+.hl-arrow {
+  display: inline-block;
+  flex: 0 0 auto;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateX(-1.6rem);
+  transition: transform var(--hl-t-slow) var(--hl-ease),
+    opacity var(--hl-t-slow) ease, filter var(--hl-t-slow) ease, color var(--hl-t-mid) ease;
+  will-change: transform, opacity, filter;
+}
+.hl-item:hover .hl-arrow {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(-0.6rem);
+}

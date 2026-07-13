@@ -1,0 +1,52 @@
+{
+  "name": "depth-scroll",
+  "title": "Depth Scroll",
+  "description": "가로 이미지 스트립을 스크롤할 때 스크롤 '속도'를 정점(vertex) 곡률 uniform으로 바꿔, 평면이 원통 안쪽처럼 휘고 원근 카메라로 깊이감(공간감)을 내는 효과. 정지 시 상시 깊이 곡률, 스크롤 시 속도 비례 출렁임 + 색수차.",
+  "whenToUse": "가로 스크롤 사진/포트폴리오 갤러리에 시네마틱한 공간감과 운동감을 줄 때. 다크 배경 풀스크린 섹션, 룩북·에이전시·작가 인덱스.",
+  "tags": [
+    "scroll",
+    "webgl",
+    "three",
+    "gallery",
+    "perspective",
+    "curvature",
+    "velocity",
+    "parallax",
+    "horizontal",
+    "depth"
+  ],
+  "entry": "depth-scroll.js",
+  "export": "DepthScroll",
+  "type": "class",
+  "dependencies": {
+    "three": ">=0.160"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Three.js",
+    "WebGL",
+    "GLSL vertex deform"
+  ],
+  "api": {
+    "constructor": "new DepthScroll(container, { images, ...options })",
+    "methods": [
+      "start()",
+      "stop()",
+      "resize()",
+      "setOptions(partial)",
+      "destroy()"
+    ],
+    "keyOptions": [
+      "images(필수)",
+      "curve",
+      "depth",
+      "velDepth",
+      "fov",
+      "lerp",
+      "velGain",
+      "chromatic",
+      "parallax"
+    ]
+  }
+}

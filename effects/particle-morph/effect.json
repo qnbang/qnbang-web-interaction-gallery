@@ -1,0 +1,47 @@
+{
+  "name": "particle-morph",
+  "title": "Particle Morph (Sphere → Ring)",
+  "description": "메시 표면을 발광 점구름으로 샘플해, 회전하는 꽉 찬 구가 활성 시 파티클 링으로 부드럽게 모핑되고 시계방향으로 도는 효과(중앙이 비어 버튼 배치 가능)",
+  "whenToUse": "푸터/CTA 영역에 브랜드 오브젝트를 입자로 표현하고, 호버 시 링으로 펼쳐 중앙에 문의 버튼을 드러내는 인터랙티브 마무리.",
+  "tags": [
+    "particles",
+    "morph",
+    "webgl",
+    "three",
+    "point-cloud",
+    "ring",
+    "glow",
+    "hover"
+  ],
+  "framework": "vanilla",
+  "entry": "particle-morph.js",
+  "export": "ParticleMorph",
+  "type": "class",
+  "dependencies": {
+    "three": ">=0.160"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Three.js",
+    "WebGL",
+    "Points + AdditiveBlending",
+    "면적가중 표면 샘플링"
+  ],
+  "api": {
+    "constructor": "new ParticleMorph(container|selector, options)",
+    "methods": [
+      "setActive(on)",
+      "start()",
+      "stop()",
+      "resize()",
+      "setOptions(partial)",
+      "destroy()"
+    ],
+    "props": [
+      "active(getter)"
+    ],
+    "callbacks": "onActiveChange(active) — 구↔링 전환 시(중앙 버튼 토글에 사용)",
+    "options": "count=60000, color, pointSize, spin, ringInner/ringOuter/ringSpin, activeR, hoverActivate=true, modelUrl(null=구체), lowPower(null=자동)"
+  }
+}

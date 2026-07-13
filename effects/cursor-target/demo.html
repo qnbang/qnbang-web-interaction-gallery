@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cursor Target — demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0f0f0f; color: #fff; font: 15px/1.6 "Pretendard", system-ui, sans-serif; }
+  header { padding: 32px 32px 12px; }
+  header h1 { margin: 0 0 6px; font-size: 20px; }
+  header p { margin: 0; color: #9a9a9a; font-size: 13px; }
+
+  section { padding: 64px 40px; border-top: 1px solid rgba(255,255,255,.08); }
+  section h2 { margin: 0 0 40px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #777; }
+  .row { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+
+  /* 속 빈(hollow) 버튼들 — 배경·테두리 없음(링은 효과가 ::after로 그림), 흰 글자 */
+  .circle { width: 132px; height: 132px; border-radius: 50%; }
+  .pill { padding: 18px 34px; border-radius: 100px; }
+  .rect { padding: 22px 30px; border-radius: 10px; }
+  .btn { background: transparent; border: none; color: #fff; font: inherit; font-size: 17px;
+         display: inline-flex; align-items: center; justify-content: center; }
+  a.btn { text-decoration: none; }
+
+  .hint { margin-top: 36px; color: #777; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Cursor Target</h1>
+  <p>속 빈 버튼 영역에 닿으면 커서 점이 그 지점에서 버튼 크기로 퍼져 채우고, 버튼 안에서 움직이면 채움이 점처럼 약간씩 스트레치되며 쫀득하게 따라옵니다. 벗어나면 다시 점으로 줄어듭니다. (smooth-cursor가 채움 담당)</p>
+</header>
+
+<section>
+  <h2>원형 (makepill 스타일)</h2>
+  <div class="row">
+    <a class="btn circle" href="#">Expertise</a>
+    <a class="btn circle" href="#">About</a>
+    <a class="btn circle" href="#">Work</a>
+  </div>
+</section>
+
+<section>
+  <h2>알약 · 사각 (어떤 모양이든)</h2>
+  <div class="row">
+    <button class="btn pill">Get started</button>
+    <button class="btn pill">Subscribe</button>
+    <button class="btn rect">Contact us</button>
+  </div>
+</section>
+
+<p class="hint" style="padding:0 40px 48px">
+  점이 흡수되는 연출은 짝 효과 <code>smooth-cursor</code>가 담당합니다(아래에서 함께 로드 중).
+  cursor-target 단독으로도 채움·자석·링 수축은 그대로 동작합니다.
+</p>
+
+<script type="module">
+  import { CursorTarget } from './cursor-target.js';
+  import { SmoothCursor } from '../smooth-cursor/smooth-cursor.js';
+  // 커서: 흰 점 — .cursor-target 위에선 그 크기로 퍼져 버튼을 흰색으로 채움
+  const cursor = new SmoothCursor({ color: '#ffffff' });
+  // 버튼: hover 시 커서 위로 올라와 텍스트가 채움 위에 보이고, 링 수축 + 글자색 검정 + 라벨 자석
+  const ct = new CursorTarget(document, { primary: '#0f0f0f', ring: 'rgba(255,255,255,.3)', cursor });
+  window.__ct = ct; window.__cursor = cursor;
+</script>
+</body>
+</html>

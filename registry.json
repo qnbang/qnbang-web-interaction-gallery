@@ -1,0 +1,1106 @@
+{
+  "generatedAt": "2026-06-22T06:47:08.299Z",
+  "count": 20,
+  "effects": [
+    {
+      "name": "bouncy-accordion",
+      "title": "Bouncy Accordion",
+      "description": "쌓인 카드형 아코디언 — 클릭 시 활성 카드가 스택에서 분리되듯 커지고(height 45→93, margin) 이웃 모서리가 모핑, 설명은 디블러 페이드인",
+      "whenToUse": "기능·설정·FAQ 목록을 카드 스택으로. 클릭한 항목이 스택에서 튀어나오는 탄성 손맛.",
+      "tags": [
+        "accordion",
+        "stacked",
+        "cards",
+        "spring",
+        "blur",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "bouncy-accordion.tsx",
+      "export": "BouncyAccordion",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "spring 300/20",
+        "borderRadius 모핑"
+      ],
+      "api": {
+        "props": "items={icon?,title,description}[], defaultActive=2, cardColor='#ececee', className"
+      },
+      "path": "effects/bouncy-accordion",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "bouncy-accordion.tsx",
+        "effect.json",
+        "README.md"
+      ]
+    },
+    {
+      "name": "cursor-target",
+      "title": "Cursor Target",
+      "description": "속 빈 버튼: hover 시 커서가 닿은 지점에서 버튼 모양 그대로(원/알약/사각) 색이 scale 0→1로 차오르고(선명·모양정확), 둘레 링이 scale3d(0,0,1)로 수축하며 글자색이 primary로 전환되고 라벨이 커서를 향해 자석으로 끌려간다. (makepill CursorTarget 동작 재구현)",
+      "whenToUse": "makepill식 '닿은 곳에서 색이 차오르는' 버튼을 만들 때. smooth-cursor와 함께 쓰면 점이 채움으로 녹아드는 연출이 완성됨(어떤 버튼 모양이든 정확하게 채워짐).",
+      "tags": [
+        "cursor",
+        "button",
+        "hover",
+        "fill",
+        "magnetic",
+        "ring",
+        "link",
+        "micro-interaction",
+        "transform",
+        "css"
+      ],
+      "entry": "cursor-target.js",
+      "export": "CursorTarget",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Vanilla JS",
+        "CSS transition",
+        "pseudo-element ::after"
+      ],
+      "api": {
+        "constructor": "new CursorTarget(container = document, options) — 옵션 객체만 단독으로 넘겨도 됨",
+        "options": [
+          "targets",
+          "fill",
+          "primary",
+          "ring",
+          "ringWidth",
+          "strength",
+          "disabledStrength",
+          "lerpSpeed",
+          "raiseZ",
+          "cursor",
+          "magnetic"
+        ],
+        "methods": [
+          "refresh()",
+          "add(el)",
+          "start()",
+          "stop()",
+          "destroy()"
+        ]
+      },
+      "path": "effects/cursor-target",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "cursor-target.js",
+        "demo.html",
+        "effect.json",
+        "README.md"
+      ]
+    },
+    {
+      "name": "depth-scroll",
+      "title": "Depth Scroll",
+      "description": "가로 이미지 스트립을 스크롤할 때 스크롤 '속도'를 정점(vertex) 곡률 uniform으로 바꿔, 평면이 원통 안쪽처럼 휘고 원근 카메라로 깊이감(공간감)을 내는 효과. 정지 시 상시 깊이 곡률, 스크롤 시 속도 비례 출렁임 + 색수차.",
+      "whenToUse": "가로 스크롤 사진/포트폴리오 갤러리에 시네마틱한 공간감과 운동감을 줄 때. 다크 배경 풀스크린 섹션, 룩북·에이전시·작가 인덱스.",
+      "tags": [
+        "scroll",
+        "webgl",
+        "three",
+        "gallery",
+        "perspective",
+        "curvature",
+        "velocity",
+        "parallax",
+        "horizontal",
+        "depth"
+      ],
+      "entry": "depth-scroll.js",
+      "export": "DepthScroll",
+      "type": "class",
+      "dependencies": {
+        "three": ">=0.160"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Three.js",
+        "WebGL",
+        "GLSL vertex deform"
+      ],
+      "api": {
+        "constructor": "new DepthScroll(container, { images, ...options })",
+        "methods": [
+          "start()",
+          "stop()",
+          "resize()",
+          "setOptions(partial)",
+          "destroy()"
+        ],
+        "keyOptions": [
+          "images(필수)",
+          "curve",
+          "depth",
+          "velDepth",
+          "fov",
+          "lerp",
+          "velGain",
+          "chromatic",
+          "parallax"
+        ]
+      },
+      "path": "effects/depth-scroll",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "depth-scroll.js",
+        "effect.json",
+        "img/1.webp",
+        "img/2.webp",
+        "img/3.webp",
+        "img/4.webp",
+        "img/5.webp",
+        "img/6.webp",
+        "README.md"
+      ]
+    },
+    {
+      "name": "expand-panels",
+      "title": "Expand Panels",
+      "description": "호버(데스크톱)/탭(모바일)로 한 패널이 펼쳐지며 이미지가 드러나는 패널 갤러리 — width 4rem↔28rem spring, 세로 라벨(-rotate-90), 연도 슬라이드인",
+      "whenToUse": "프로젝트/작업 목록을 가로 패널 아코디언으로 보여줄 때. 호버로 미리보기 이미지를 펼치는 인덱스/포트폴리오 섹션.",
+      "tags": [
+        "gallery",
+        "hover",
+        "expand",
+        "panels",
+        "spring",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "expand-panels.tsx",
+      "export": "ExpandPanels",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "spring 200/25",
+        "rotate-90 라벨"
+      ],
+      "api": {
+        "props": "items={id,label,year?,image}[], defaultActive, mobileQuery, className"
+      },
+      "path": "effects/expand-panels",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "assets/p1.jpg",
+        "assets/p2.jpg",
+        "assets/p3.jpg",
+        "assets/p4.jpg",
+        "assets/p5.jpg",
+        "assets/p6.jpg",
+        "assets/p7.jpg",
+        "assets/p8.jpg",
+        "effect.json",
+        "expand-panels.tsx",
+        "README.md"
+      ]
+    },
+    {
+      "name": "fluid-particles",
+      "title": "Fluid Particles",
+      "description": "텍스트·이미지·좌표를 입자 군집으로 만들고, 마우스가 움직이면 그 이동 속도를 격자 속도장에 주입해 입자가 흐름을 타고 마우스를 따라 흩어졌다가 제자리로 복귀하는 유체 인터랙션.",
+      "whenToUse": "히어로의 텍스트/로고를 입자로 표현하고 마우스로 휘젓는 유체 인터랙션을 줄 때. 가산 블렌딩 발광 효과가 어울리는 다크 배경 섹션.",
+      "tags": [
+        "particles",
+        "fluid",
+        "mouse",
+        "pointer",
+        "webgl",
+        "three",
+        "hero",
+        "text",
+        "additive"
+      ],
+      "entry": "fluid-particles.js",
+      "export": "FluidParticles",
+      "type": "class",
+      "dependencies": {
+        "three": ">=0.160"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Three.js",
+        "WebGL",
+        "Canvas 2D 샘플링",
+        "CPU 격자 유체 시뮬레이션"
+      ],
+      "api": {
+        "constructor": "new FluidParticles(container, options)",
+        "methods": [
+          "start()",
+          "stop()",
+          "setOpacity(v)",
+          "setColor(c)",
+          "setSource(opts)",
+          "resize()",
+          "destroy()"
+        ],
+        "sources": [
+          "text",
+          "image",
+          "points"
+        ]
+      },
+      "path": "effects/fluid-particles",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "fluid-particles.js",
+        "README.md"
+      ]
+    },
+    {
+      "name": "gallery-3d-scroll",
+      "title": "Gallery 3D Scroll (Dolly)",
+      "description": "스크롤로 카메라가 Z축을 돌리인하며 흩뿌려진 이미지 카드 필드를 비행하는 3D 갤러리(종이 펄럭임·디졸브)",
+      "whenToUse": "포트폴리오·아카이브 이미지 묶음을 몰입형 깊이 비행으로 보여줄 때. 스크롤에 따라 카드가 다가오고 또렷해지다 스쳐 지나가는 zajno식 갤러리.",
+      "tags": [
+        "gallery",
+        "scroll",
+        "3d",
+        "webgl",
+        "three",
+        "dolly",
+        "shader",
+        "images"
+      ],
+      "framework": "vanilla",
+      "entry": "gallery-3d-scroll.js",
+      "export": "GalleryDolly",
+      "type": "class",
+      "dependencies": {
+        "three": ">=0.160"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Three.js",
+        "WebGL",
+        "GLSL(cloth-wave + rounded SDF)"
+      ],
+      "api": {
+        "constructor": "new GalleryDolly(container|selector, { images:[...], ... })",
+        "methods": [
+          "setProgress(0~1)",
+          "start()",
+          "stop()",
+          "resize()",
+          "setOptions(partial)",
+          "destroy()"
+        ],
+        "callbacks": "onFocus(index) — 초점 카드 변경 시",
+        "options": "images(필수), minPlanes=15, gapZ, focusDist, fadeSpan, passFade, cornerRadius, parallax, lowPower(null=자동), pauseWhenHidden"
+      },
+      "path": "effects/gallery-3d-scroll",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "assets/images/g1.jpg",
+        "assets/images/g2.jpg",
+        "assets/images/g3.jpg",
+        "assets/images/g4.jpg",
+        "assets/images/g5.jpg",
+        "assets/images/g6.jpg",
+        "assets/images/g7.jpg",
+        "assets/images/g8.jpg",
+        "demo.html",
+        "effect.json",
+        "gallery-3d-scroll.js",
+        "README.md"
+      ]
+    },
+    {
+      "name": "gooey-menu",
+      "title": "Gooey Menu",
+      "description": "로고에 호버하면 위로 끈적하게(SVG goo 필터) 분리되며 정보 패널이 펼쳐지는 효과(Next.js 로고 스타일 dev 패널)",
+      "whenToUse": "CTA·상태 인디케이터·로고 인터랙션. 작은 원형 버튼에서 패널이 액체처럼 솟아오르는 손맛.",
+      "tags": [
+        "gooey",
+        "svg-filter",
+        "blob",
+        "reveal",
+        "logo",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "gooey-menu.tsx",
+      "export": "GooeyMenu",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "SVG goo(feGaussianBlur 4.4 + feColorMatrix 20 -7)",
+        "spring 300/30"
+      ],
+      "api": {
+        "props": "rows={label,value,danger?}[], logo?, color='#000', className"
+      },
+      "path": "effects/gooey-menu",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "effect.json",
+        "gooey-menu.tsx",
+        "README.md"
+      ]
+    },
+    {
+      "name": "hover-list",
+      "title": "Hover List",
+      "description": "리스트 항목 hover 인터랙션 — 행 와이프 채움 + 텍스트 들여쓰기 + 화살표 디블러 슬라이드인 + 합성 blip 사운드",
+      "whenToUse": "서비스/메뉴/네비 목록을 인터랙티브하게. 행마다 hover 시 채워지고 화살표가 들어오며 청각 피드백을 주고 싶을 때(에이전시·포트폴리오 인덱스).",
+      "tags": [
+        "hover",
+        "list",
+        "menu",
+        "nav",
+        "wipe",
+        "sound",
+        "web-audio"
+      ],
+      "framework": "vanilla",
+      "entry": "hover-list.js",
+      "export": "HoverList",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Audio",
+        "CSS transitions"
+      ],
+      "api": {
+        "constructor": "new HoverList(root|selector, options)",
+        "methods": [
+          "destroy()"
+        ],
+        "options": "itemSelector='.hl-item', arrow='→', sound=true, soundVolume=0.05, desktopOnly=true",
+        "css": "hover-list.css 동봉 필수(.hl-item/.hl-heading/.hl-arrow). 색은 .hl-list 의 --hl-* 변수로 덮어쓰기"
+      },
+      "path": "effects/hover-list",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "hover-list.css",
+        "hover-list.js",
+        "README.md"
+      ]
+    },
+    {
+      "name": "hover-members",
+      "title": "Hover Members",
+      "description": "아바타 행 호버 시 아바타 확대 + 따라오는 커스텀 커서 + 뒤 대형 텍스트가 멤버 이름으로 글자별 슬라이드 스왑",
+      "whenToUse": "팀/크루/출연진 소개 섹션. 아바타에 호버하면 거대한 이름이 글자별로 바뀌는 임팩트 있는 인트로.",
+      "tags": [
+        "team",
+        "hover",
+        "avatar",
+        "cursor",
+        "text",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "hover-members.tsx",
+      "export": "HoverMembers",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "useSpring(71/16, 150/10)",
+        "글자별 변형 + stagger"
+      ],
+      "api": {
+        "props": "teamMembers={name,image}[], defaultName='SKIPER-UI', backgroundColor, textColor, hoverTextColor, cursorColor, className"
+      },
+      "path": "effects/hover-members",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "assets/m1.jpg",
+        "assets/m2.jpg",
+        "assets/m3.jpg",
+        "assets/m4.jpg",
+        "assets/m5.jpg",
+        "assets/m6.jpg",
+        "assets/m7.jpg",
+        "assets/m8.jpg",
+        "assets/m9.jpg",
+        "effect.json",
+        "hover-members.tsx",
+        "README.md"
+      ]
+    },
+    {
+      "name": "infinite-canvas",
+      "title": "Infinite Canvas",
+      "description": "휠·드래그·터치로 끝없이 패닝되는 무한 타일 이미지 그리드 — 2×2 복제로 seamless wrap, GSAP Observer + quickTo 관성",
+      "whenToUse": "무드보드·갤러리·작업 모음을 Figma식 무한 캔버스로 탐색하게 할 때. 어디로 끌어도 끊김 없이 이어지는 이미지 보드.",
+      "tags": [
+        "infinite",
+        "canvas",
+        "drag",
+        "pan",
+        "wheel",
+        "gsap",
+        "observer",
+        "gallery",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "infinite-canvas.tsx",
+      "export": "InfiniteCanvas",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "gsap": ">=3.12"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "GSAP",
+        "Observer plugin",
+        "quickTo + utils.wrap/unitize"
+      ],
+      "api": {
+        "props": "imageClassName='w-[25vw] lg:w-[15vw]', numberOfImages=15, imageRootPath='/images/lummi', gap='10vw', className",
+        "note": "이미지는 imageRootPath/img1.png … imgN.png. GSAP Observer 는 gsap 패키지에 포함(gsap/Observer)."
+      },
+      "origin": "Skiper UI skiper73 (https://skiper-ui.com/v1/skiper73) 충실 포팅. 메커니즘·이징·수치 원본 그대로.",
+      "license": "Based on Skiper UI (free) — 자유 사용·수정 가능, Skiper UI 출처표기 필수. https://skiper-ui.com",
+      "created": "2026-06-22",
+      "path": "effects/infinite-canvas",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "assets/img1.png",
+        "assets/img10.png",
+        "assets/img11.png",
+        "assets/img12.png",
+        "assets/img13.png",
+        "assets/img14.png",
+        "assets/img15.png",
+        "assets/img2.png",
+        "assets/img3.png",
+        "assets/img4.png",
+        "assets/img5.png",
+        "assets/img6.png",
+        "assets/img7.png",
+        "assets/img8.png",
+        "assets/img9.png",
+        "effect.json",
+        "infinite-canvas.tsx",
+        "README.md"
+      ]
+    },
+    {
+      "name": "magnetic-button",
+      "title": "Magnetic Button",
+      "description": "커서를 따라오는 자석 버튼 — elastic reveal 등장 + 마그네틱 추종 + 클릭 squish",
+      "whenToUse": "CTA·플로팅 액션 버튼에 생동감을 줄 때. 특정 영역(스크롤·근접)에서 통통 튀며 등장하고 커서를 따라오게 하고 싶을 때.",
+      "tags": [
+        "button",
+        "magnetic",
+        "cursor",
+        "cta",
+        "gsap",
+        "elastic",
+        "hover"
+      ],
+      "framework": "vanilla",
+      "entry": "magnetic-button.js",
+      "export": "MagneticButton",
+      "type": "class",
+      "dependencies": {
+        "gsap": ">=3.12"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "GSAP",
+        "quickTo"
+      ],
+      "api": {
+        "constructor": "new MagneticButton(el|selector, options)",
+        "methods": [
+          "reveal(on=true)",
+          "hide()",
+          "setOptions(partial)",
+          "destroy()"
+        ],
+        "options": "magnet=0.28, hiddenScale=0.6, showEase='elastic.out(1,0.5)', pressScale=0.92, startHidden=true"
+      },
+      "path": "effects/magnetic-button",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "magnetic-button.js",
+        "README.md"
+      ]
+    },
+    {
+      "name": "object-cluster-3d",
+      "title": "Object Cluster 3D",
+      "description": "3D 오브젝트(GLTF·구체) 클러스터가 방사형 버스트로 등장해 부유·텀블링하고, 마우스로 밀리며, 스크롤로 카메라가 꿰뚫고 통과하는 효과(실시간 큐브맵 반사)",
+      "whenToUse": "히어로/인트로에 브랜드 오브젝트(과일·제품·로고 입자)를 구름처럼 띄워 생동감 있는 3D 클러스터를 만들 때. 스크롤로 안을 통과하는 몰입 인트로.",
+      "tags": [
+        "3d",
+        "cluster",
+        "webgl",
+        "three",
+        "physics",
+        "mouse",
+        "scroll",
+        "hero",
+        "ibl"
+      ],
+      "framework": "vanilla",
+      "entry": "object-cluster-3d.js",
+      "export": "ObjectCluster3D",
+      "type": "class",
+      "dependencies": {
+        "three": ">=0.160"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Three.js",
+        "WebGL",
+        "CubeCamera IBL",
+        "MeshPhysicalMaterial",
+        "onBeforeCompile grading"
+      ],
+      "api": {
+        "constructor": "new ObjectCluster3D(container|selector, options)",
+        "methods": [
+          "setProgress(0~1)",
+          "start()",
+          "stop()",
+          "resize()",
+          "setOptions(partial)",
+          "destroy()"
+        ],
+        "callbacks": "onHover(isHover) — 커서가 오브젝트 반응 반경에 들어왔는지",
+        "options": "count=24, rMin/rMax, cloudX/Y/Z, modelUrl(null=구체), brand/tint/shadowLift, mouseRadiusNdc/mousePush/mouseSweep, approachStart/approachEnd/passEnd, autoStart, lowPower(null=자동)",
+        "note": "modelUrl 사용 시 importmap에 three/addons/ 매핑 필요(GLTFLoader 동적 import). 구체 폴백은 코어 three만."
+      },
+      "path": "effects/object-cluster-3d",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "object-cluster-3d.js",
+        "README.md"
+      ]
+    },
+    {
+      "name": "particle-morph",
+      "title": "Particle Morph (Sphere → Ring)",
+      "description": "메시 표면을 발광 점구름으로 샘플해, 회전하는 꽉 찬 구가 활성 시 파티클 링으로 부드럽게 모핑되고 시계방향으로 도는 효과(중앙이 비어 버튼 배치 가능)",
+      "whenToUse": "푸터/CTA 영역에 브랜드 오브젝트를 입자로 표현하고, 호버 시 링으로 펼쳐 중앙에 문의 버튼을 드러내는 인터랙티브 마무리.",
+      "tags": [
+        "particles",
+        "morph",
+        "webgl",
+        "three",
+        "point-cloud",
+        "ring",
+        "glow",
+        "hover"
+      ],
+      "framework": "vanilla",
+      "entry": "particle-morph.js",
+      "export": "ParticleMorph",
+      "type": "class",
+      "dependencies": {
+        "three": ">=0.160"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Three.js",
+        "WebGL",
+        "Points + AdditiveBlending",
+        "면적가중 표면 샘플링"
+      ],
+      "api": {
+        "constructor": "new ParticleMorph(container|selector, options)",
+        "methods": [
+          "setActive(on)",
+          "start()",
+          "stop()",
+          "resize()",
+          "setOptions(partial)",
+          "destroy()"
+        ],
+        "props": [
+          "active(getter)"
+        ],
+        "callbacks": "onActiveChange(active) — 구↔링 전환 시(중앙 버튼 토글에 사용)",
+        "options": "count=60000, color, pointSize, spin, ringInner/ringOuter/ringSpin, activeR, hoverActivate=true, modelUrl(null=구체), lowPower(null=자동)"
+      },
+      "path": "effects/particle-morph",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "particle-morph.js",
+        "README.md"
+      ]
+    },
+    {
+      "name": "projects-showcase",
+      "title": "Projects Showcase",
+      "description": "프로젝트 리스트 호버 시 드래그 프리뷰 이미지 교체(layoutId), 클릭 시 타이틀·이미지가 리스트→상세로 공유요소 모핑",
+      "whenToUse": "에이전시·포트폴리오 인덱스. 호버 프리뷰 + 클릭하면 상세로 매끄럽게 확장되는 layoutId 전환.",
+      "tags": [
+        "projects",
+        "showcase",
+        "layoutid",
+        "shared-element",
+        "drag",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "projects-showcase.tsx",
+      "export": "ProjectsShowcase",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "layoutId 공유요소 전환",
+        "staggerChildren"
+      ],
+      "api": {
+        "props": "projects={title,img}[], detail?, foreground='#111', background='#fff', className"
+      },
+      "path": "effects/projects-showcase",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "assets/s1.jpg",
+        "assets/s2.jpg",
+        "assets/s3.jpg",
+        "assets/s4.jpg",
+        "assets/s5.jpg",
+        "assets/s6.jpg",
+        "effect.json",
+        "projects-showcase.tsx",
+        "README.md"
+      ]
+    },
+    {
+      "name": "scattered-cards-3d",
+      "title": "Scattered Cards 3D",
+      "description": "여러 장의 카드가 3D 공간에 흩날려 있다가 스크롤하면 텀블링하며 위로 흐르는 효과(두께·조명·그림자, 0번 카드 클라이맥스)",
+      "whenToUse": "Contact/소개/CTA 섹션에 카드(명함·티켓·포토)를 입체적으로 흩뿌려 스크롤 클라이맥스를 만들 때. 마지막 카드가 정면으로 화면을 스치는 마무리 연출.",
+      "tags": [
+        "3d",
+        "cards",
+        "scroll",
+        "webgl",
+        "three",
+        "tumble",
+        "stream",
+        "shadow"
+      ],
+      "framework": "vanilla",
+      "entry": "scattered-cards-3d.js",
+      "export": "ScatteredCards3D",
+      "type": "class",
+      "dependencies": {
+        "three": ">=0.160"
+      },
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Three.js",
+        "WebGL",
+        "BoxGeometry",
+        "PCFSoftShadow"
+      ],
+      "api": {
+        "constructor": "new ScatteredCards3D(container|selector, options)",
+        "methods": [
+          "setProgress(0~1)",
+          "start()",
+          "stop()",
+          "resize()",
+          "setOptions(partial)",
+          "destroy()"
+        ],
+        "options": "count=19, cardW/H/T, paperColor, frontImage, backImages[], camZ, fov, spreadX, spin, rise, climax=true, lowPower(null=자동)"
+      },
+      "path": "effects/scattered-cards-3d",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "assets/card-back.jpg",
+        "assets/card-front.jpg",
+        "demo.html",
+        "effect.json",
+        "README.md",
+        "scattered-cards-3d.js"
+      ]
+    },
+    {
+      "name": "scroll-images-reveal",
+      "title": "Scroll Images Reveal (Perspective)",
+      "description": "2열 그리드 이미지 카드들이 스크롤에 따라 3D 원근 변형(rotateX/Z·skewX·scaleY·blur/brightness/contrast)으로 리빌되는 효과 — 좌우 열 미러링",
+      "whenToUse": "포트폴리오·갤러리 이미지 묶음을 스크롤하며 입체적으로 펼칠 때. 카드가 깊이축에서 모였다 멀어지는 몰입형 갤러리.",
+      "tags": [
+        "scroll",
+        "reveal",
+        "images",
+        "gallery",
+        "3d",
+        "perspective",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "scroll-images-reveal.tsx",
+      "export": "ScrollImagesReveal",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "useScroll",
+        "useTransform(multi-input filter)",
+        "perspective 800px"
+      ],
+      "api": {
+        "props": "images(필수: string[]), caption='Perspective scroll effect', className",
+        "note": "스무스 스크롤(Lenis 등)과 함께 쓰면 느낌이 더 매끈. 원본은 GSAP ScrollTrigger 변형도 제공."
+      },
+      "origin": "Skiper UI skiper33 (https://skiper-ui.com/v1/skiper33) Framer Motion 변형 충실 포팅. 스크롤 transform·구간·수치 원본 그대로.",
+      "license": "Based on Skiper UI (free) — 자유 사용·수정 가능, Skiper UI 출처표기 필수. https://skiper-ui.com",
+      "created": "2026-06-22",
+      "path": "effects/scroll-images-reveal",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "assets/img1.png",
+        "assets/img10.png",
+        "assets/img11.png",
+        "assets/img12.png",
+        "assets/img13.png",
+        "assets/img14.png",
+        "assets/img15.png",
+        "assets/img16.jpg",
+        "assets/img16.png",
+        "assets/img2.png",
+        "assets/img3.png",
+        "assets/img4.png",
+        "assets/img5.png",
+        "assets/img6.png",
+        "assets/img7.png",
+        "assets/img8.png",
+        "assets/img9.png",
+        "effect.json",
+        "README.md",
+        "scroll-images-reveal.tsx"
+      ]
+    },
+    {
+      "name": "scroll-reveal-grid",
+      "title": "Scroll Reveal Grid",
+      "description": "긴 스크롤 트랙(900vh) 위 sticky N열 그리드에서 각 카드가 자기 구간(scrollYProgress)에서 차례로 reveal(y/opacity/scale) + 진행도 바",
+      "whenToUse": "제품·기능·스텝을 스크롤 따라 순차 공개. 한 화면에 고정된 그리드가 스크롤로 차오르는 연출.",
+      "tags": [
+        "scroll",
+        "reveal",
+        "sticky",
+        "grid",
+        "progress",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "scroll-reveal-grid.tsx",
+      "export": "ScrollRevealGrid",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "useScroll",
+        "useTransform"
+      ],
+      "api": {
+        "props": "items={bgSrc,title,desc}[], trackHeight='900vh', accent='#f97316', className"
+      },
+      "path": "effects/scroll-reveal-grid",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "assets/c1.jpg",
+        "assets/c2.jpg",
+        "assets/c3.jpg",
+        "assets/c4.jpg",
+        "assets/c5.jpg",
+        "assets/c6.jpg",
+        "assets/c7.jpg",
+        "assets/c8.jpg",
+        "assets/c9.jpg",
+        "effect.json",
+        "README.md",
+        "scroll-reveal-grid.tsx"
+      ]
+    },
+    {
+      "name": "skiper24",
+      "title": "Tik Tik Color List",
+      "description": "스크롤하면 항목이 차례로 활성화되며 배경색이 바뀌고 우하단 프리뷰 이미지가 스왑되는 컬러 리스트(틱 사운드·무한 스크롤)",
+      "whenToUse": "프로젝트/작품 목록을 스크롤 내러티브로 보여줄 때. 항목마다 대표색·대표이미지가 있고, 스크롤에 따라 풀스크린 분위기(배경색)와 프리뷰가 전환되는 인덱스/아카이브 섹션.",
+      "tags": [
+        "scroll",
+        "scrolltrigger",
+        "gsap",
+        "list",
+        "color",
+        "sound",
+        "infinite-scroll",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "skiper24.tsx",
+      "export": "TikTikColorList",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11",
+        "gsap": ">=3.12",
+        "use-sound": ">=4",
+        "clsx": ">=2",
+        "tailwind-merge": ">=2"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "GSAP ScrollTrigger",
+        "Framer Motion",
+        "use-sound",
+        "Tailwind"
+      ],
+      "api": {
+        "props": {
+          "projects": "Project[] (id,name,description,badge,bgColor,image) — 필수",
+          "showPreview": "boolean=true — 우하단 드래그 프리뷰 카드",
+          "previewSize": "'sm'|'md'|'lg'=lg",
+          "enableSound": "boolean=true — 항목 전환 tick",
+          "soundSrc": "string='/sfx/tick.wav'",
+          "infiniteScroll": "boolean=true — 10세트 반복 + 바닥 근처 5세트 추가",
+          "scrollThreshold": "number=1000 — 추가 로드 임계 px"
+        }
+      },
+      "path": "effects/skiper24",
+      "hasDemo": true,
+      "hasPreview": true,
+      "files": [
+        "assets/fonts/PPMori-Regular.woff",
+        "assets/images/x.com/10.jpeg",
+        "assets/images/x.com/11.jpeg",
+        "assets/images/x.com/12.jpeg",
+        "assets/images/x.com/19.jpeg",
+        "assets/images/x.com/20.jpeg",
+        "assets/images/x.com/21.jpeg",
+        "assets/images/x.com/28.jpeg",
+        "assets/images/x.com/3.jpeg",
+        "assets/images/x.com/4.jpeg",
+        "assets/images/x.com/5.jpeg",
+        "assets/images/x.com/6.jpeg",
+        "assets/images/x.com/9.jpeg",
+        "assets/sfx/tick.wav",
+        "effect.json",
+        "README.md",
+        "skiper24.tsx"
+      ]
+    },
+    {
+      "name": "smooth-cursor",
+      "title": "Smooth Cursor",
+      "description": "점 하나가 마우스를 살짝 딜레이로 따라오며 속도에 따라 진행 방향으로 늘어나는(squish/stretch+회전) 커서. cursor-target에 닿으면 점이 그 크기로 퍼져(useElementSize) 버튼을 채우고, 채운 채로 포인터를 따라 morph한다. (makepill Cursor.js onTick·magnetize 추출 재구현)",
+      "whenToUse": "브랜딩이 강한 랜딩/포트폴리오에서 마우스 자체를 인터랙션 요소로 쓰고 싶을 때. cursor-target 와 함께 쓰면 버튼이 색으로 채워지는 makepill식 효과가 완성됨.",
+      "tags": [
+        "cursor",
+        "mouse",
+        "pointer",
+        "follower",
+        "lerp",
+        "squish",
+        "stretch",
+        "morph",
+        "interaction",
+        "transform"
+      ],
+      "entry": "smooth-cursor.js",
+      "export": "SmoothCursor",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Vanilla JS",
+        "requestAnimationFrame",
+        "CSS transition"
+      ],
+      "api": {
+        "constructor": "new SmoothCursor(container = document.body, options) — 첫 인자로 옵션 객체만 넘겨도 됨",
+        "options": [
+          "size",
+          "color",
+          "textColor",
+          "mainSpeed",
+          "scaleSpeed",
+          "morphLevel",
+          "morphLevelHover",
+          "morphMax",
+          "fillSelector",
+          "fillVar",
+          "labelSelector",
+          "labelAttr",
+          "iconAttr",
+          "hoverScale",
+          "themeAttr",
+          "themes",
+          "blendDifference",
+          "hideNative",
+          "zIndex",
+          "respectReducedMotion"
+        ],
+        "methods": [
+          "start()",
+          "stop()",
+          "destroy()",
+          "setTheme(name)",
+          "setOptions(partial)"
+        ]
+      },
+      "path": "effects/smooth-cursor",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "README.md",
+        "smooth-cursor.js"
+      ]
+    },
+    {
+      "name": "stairs-preloader",
+      "title": "Stairs Preloader",
+      "description": "화면을 덮은 N개 세로 컬럼(계단)이 우→좌 stagger로 height 0으로 접히며 사라지고, 중앙 헤드라인이 페이드인/아웃하는 프리로더",
+      "whenToUse": "랜딩/앱 첫 진입 로딩 화면. 컬럼이 계단식으로 걷히며 콘텐츠가 드러나는 임팩트 있는 인트로 트랜지션.",
+      "tags": [
+        "preloader",
+        "loading",
+        "intro",
+        "stairs",
+        "transition",
+        "framer-motion",
+        "react"
+      ],
+      "framework": "react",
+      "entry": "stairs-preloader.tsx",
+      "export": "StairsPreloader",
+      "type": "component",
+      "dependencies": {
+        "react": ">=18",
+        "framer-motion": ">=11"
+      },
+      "demo": "README.md",
+      "version": "1.0.0",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "AnimatePresence(mode=wait)",
+        "height exit + ease [.33,1,.68,1]"
+      ],
+      "api": {
+        "props": "columns=5, columnColor='#000', headline='The first-ever AGI. Period.', headlineColor='#fff', className",
+        "usage": "<AnimatePresence mode=\"wait\">{loading && <StairsPreloader />}</AnimatePresence> — 데모는 StairsPreloaderDemo(duration=2500)"
+      },
+      "origin": "Skiper UI skiper9 (https://skiper-ui.com/v1/skiper9) 충실 포팅. 트랜지션·딜레이·이징 원본 그대로.",
+      "license": "Based on Skiper UI (free) — 자유 사용·수정 가능, Skiper UI 출처표기 필수. https://skiper-ui.com",
+      "created": "2026-06-22",
+      "path": "effects/stairs-preloader",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "effect.json",
+        "README.md",
+        "stairs-preloader.tsx"
+      ]
+    }
+  ]
+}

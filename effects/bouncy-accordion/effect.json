@@ -1,0 +1,34 @@
+{
+  "name": "bouncy-accordion",
+  "title": "Bouncy Accordion",
+  "description": "쌓인 카드형 아코디언 — 클릭 시 활성 카드가 스택에서 분리되듯 커지고(height 45→93, margin) 이웃 모서리가 모핑, 설명은 디블러 페이드인",
+  "whenToUse": "기능·설정·FAQ 목록을 카드 스택으로. 클릭한 항목이 스택에서 튀어나오는 탄성 손맛.",
+  "tags": [
+    "accordion",
+    "stacked",
+    "cards",
+    "spring",
+    "blur",
+    "framer-motion",
+    "react"
+  ],
+  "framework": "react",
+  "entry": "bouncy-accordion.tsx",
+  "export": "BouncyAccordion",
+  "type": "component",
+  "dependencies": {
+    "react": ">=18",
+    "framer-motion": ">=11"
+  },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": [
+    "React",
+    "Framer Motion",
+    "spring 300/20",
+    "borderRadius 모핑"
+  ],
+  "api": {
+    "props": "items={icon?,title,description}[], defaultActive=2, cardColor='#ececee', className"
+  }
+}

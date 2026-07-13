@@ -1,0 +1,34 @@
+{
+  "name": "hover-members",
+  "title": "Hover Members",
+  "description": "아바타 행 호버 시 아바타 확대 + 따라오는 커스텀 커서 + 뒤 대형 텍스트가 멤버 이름으로 글자별 슬라이드 스왑",
+  "whenToUse": "팀/크루/출연진 소개 섹션. 아바타에 호버하면 거대한 이름이 글자별로 바뀌는 임팩트 있는 인트로.",
+  "tags": [
+    "team",
+    "hover",
+    "avatar",
+    "cursor",
+    "text",
+    "framer-motion",
+    "react"
+  ],
+  "framework": "react",
+  "entry": "hover-members.tsx",
+  "export": "HoverMembers",
+  "type": "component",
+  "dependencies": {
+    "react": ">=18",
+    "framer-motion": ">=11"
+  },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": [
+    "React",
+    "Framer Motion",
+    "useSpring(71/16, 150/10)",
+    "글자별 변형 + stagger"
+  ],
+  "api": {
+    "props": "teamMembers={name,image}[], defaultName='SKIPER-UI', backgroundColor, textColor, hoverTextColor, cursorColor, className"
+  }
+}

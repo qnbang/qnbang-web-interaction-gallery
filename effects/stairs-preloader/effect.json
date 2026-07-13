@@ -1,0 +1,22 @@
+{
+  "name": "stairs-preloader",
+  "title": "Stairs Preloader",
+  "description": "화면을 덮은 N개 세로 컬럼(계단)이 우→좌 stagger로 height 0으로 접히며 사라지고, 중앙 헤드라인이 페이드인/아웃하는 프리로더",
+  "whenToUse": "랜딩/앱 첫 진입 로딩 화면. 컬럼이 계단식으로 걷히며 콘텐츠가 드러나는 임팩트 있는 인트로 트랜지션.",
+  "tags": ["preloader", "loading", "intro", "stairs", "transition", "framer-motion", "react"],
+  "framework": "react",
+  "entry": "stairs-preloader.tsx",
+  "export": "StairsPreloader",
+  "type": "component",
+  "dependencies": { "react": ">=18", "framer-motion": ">=11" },
+  "demo": "README.md",
+  "version": "1.0.0",
+  "tech": ["React", "Framer Motion", "AnimatePresence(mode=wait)", "height exit + ease [.33,1,.68,1]"],
+  "api": {
+    "props": "columns=5, columnColor='#000', headline='The first-ever AGI. Period.', headlineColor='#fff', className",
+    "usage": "<AnimatePresence mode=\"wait\">{loading && <StairsPreloader />}</AnimatePresence> — 데모는 StairsPreloaderDemo(duration=2500)"
+  },
+  "origin": "Skiper UI skiper9 (https://skiper-ui.com/v1/skiper9) 충실 포팅. 트랜지션·딜레이·이징 원본 그대로.",
+  "license": "Based on Skiper UI (free) — 자유 사용·수정 가능, Skiper UI 출처표기 필수. https://skiper-ui.com",
+  "created": "2026-06-22"
+}

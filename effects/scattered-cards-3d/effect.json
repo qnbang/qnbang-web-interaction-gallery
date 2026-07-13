@@ -1,0 +1,43 @@
+{
+  "name": "scattered-cards-3d",
+  "title": "Scattered Cards 3D",
+  "description": "여러 장의 카드가 3D 공간에 흩날려 있다가 스크롤하면 텀블링하며 위로 흐르는 효과(두께·조명·그림자, 0번 카드 클라이맥스)",
+  "whenToUse": "Contact/소개/CTA 섹션에 카드(명함·티켓·포토)를 입체적으로 흩뿌려 스크롤 클라이맥스를 만들 때. 마지막 카드가 정면으로 화면을 스치는 마무리 연출.",
+  "tags": [
+    "3d",
+    "cards",
+    "scroll",
+    "webgl",
+    "three",
+    "tumble",
+    "stream",
+    "shadow"
+  ],
+  "framework": "vanilla",
+  "entry": "scattered-cards-3d.js",
+  "export": "ScatteredCards3D",
+  "type": "class",
+  "dependencies": {
+    "three": ">=0.160"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Three.js",
+    "WebGL",
+    "BoxGeometry",
+    "PCFSoftShadow"
+  ],
+  "api": {
+    "constructor": "new ScatteredCards3D(container|selector, options)",
+    "methods": [
+      "setProgress(0~1)",
+      "start()",
+      "stop()",
+      "resize()",
+      "setOptions(partial)",
+      "destroy()"
+    ],
+    "options": "count=19, cardW/H/T, paperColor, frontImage, backImages[], camZ, fov, spreadX, spin, rise, climax=true, lowPower(null=자동)"
+  }
+}

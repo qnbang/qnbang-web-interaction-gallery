@@ -1,0 +1,43 @@
+{
+  "name": "gallery-3d-scroll",
+  "title": "Gallery 3D Scroll (Dolly)",
+  "description": "스크롤로 카메라가 Z축을 돌리인하며 흩뿌려진 이미지 카드 필드를 비행하는 3D 갤러리(종이 펄럭임·디졸브)",
+  "whenToUse": "포트폴리오·아카이브 이미지 묶음을 몰입형 깊이 비행으로 보여줄 때. 스크롤에 따라 카드가 다가오고 또렷해지다 스쳐 지나가는 zajno식 갤러리.",
+  "tags": [
+    "gallery",
+    "scroll",
+    "3d",
+    "webgl",
+    "three",
+    "dolly",
+    "shader",
+    "images"
+  ],
+  "framework": "vanilla",
+  "entry": "gallery-3d-scroll.js",
+  "export": "GalleryDolly",
+  "type": "class",
+  "dependencies": {
+    "three": ">=0.160"
+  },
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Three.js",
+    "WebGL",
+    "GLSL(cloth-wave + rounded SDF)"
+  ],
+  "api": {
+    "constructor": "new GalleryDolly(container|selector, { images:[...], ... })",
+    "methods": [
+      "setProgress(0~1)",
+      "start()",
+      "stop()",
+      "resize()",
+      "setOptions(partial)",
+      "destroy()"
+    ],
+    "callbacks": "onFocus(index) — 초점 카드 변경 시",
+    "options": "images(필수), minPlanes=15, gapZ, focusDist, fadeSpan, passFade, cornerRadius, parallax, lowPower(null=자동), pauseWhenHidden"
+  }
+}

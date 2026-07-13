@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Object Cluster 3D — demo</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: radial-gradient(120% 90% at 50% 10%, #A8B5E5 0%, #4545DA 45%, #131349 100%); font: 13px/1.5 system-ui, sans-serif; }
+  #stage { position: fixed; inset: 0; z-index: 0; }
+  .spacer { height: 500vh; position: relative; z-index: 1; pointer-events: none; }
+  .hint { position: fixed; top: 22px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,.9); z-index: 2; }
+  .hint b { color: #fff; }
+</style>
+</head>
+<body>
+  <div id="stage"></div>
+  <div class="spacer"></div>
+  <div class="hint"><b>커서로 밀어내</b>고, <b>스크롤</b>하면 카메라가 클러스터를 꿰뚫고 통과합니다. (구체 폴백 — modelUrl로 GLTF 교체 가능)</div>
+
+  <script type="importmap">
+    { "imports": { "three": "../../shared/vendor/three.module.min.js" } }
+  </script>
+  <script type="module">
+    import { ObjectCluster3D } from './object-cluster-3d.js';
+    const cluster = new ObjectCluster3D('#stage', { count: 24 /* , modelUrl: '/models/blueberry.glb' */ });
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      cluster.setProgress(max > 0 ? window.scrollY / max : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>

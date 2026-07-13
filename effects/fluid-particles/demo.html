@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fluid Particles — demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #000; color: #eaeaea; font: 14px/1.5 "Pretendard", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  header { padding: 24px 24px 8px; }
+  header h1 { margin: 0 0 6px; font-size: 19px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: #9a9a9a; font-size: 13px; }
+  header a { color: #9a9a9a; }
+  .stage { position: relative; width: 100%; height: 78vh; min-height: 460px; background: #000; overflow: hidden; }
+  .stage.short { height: 50vh; min-height: 340px; }
+  section { border-top: 1px solid #141414; }
+  .label { position: absolute; top: 14px; left: 16px; font-size: 12px; color: #6c6c6c; letter-spacing: .05em; pointer-events: none; }
+  .hint { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); color: #777; font-size: 12px; pointer-events: none; letter-spacing: .04em; }
+  .panel { position: absolute; top: 14px; right: 14px; width: 232px; background: rgba(14,14,14,.82); backdrop-filter: blur(8px); border: 1px solid #232323; border-radius: 10px; padding: 12px 14px; z-index: 5; }
+  .panel h3 { margin: 0 0 10px; font-size: 11px; letter-spacing: .08em; color: #8a8a8a; text-transform: uppercase; }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 6px 8px; align-items: center; margin: 7px 0; }
+  .row label { font-size: 11px; color: #b8b8b8; }
+  .row output { font-size: 11px; color: #fff; font-variant-numeric: tabular-nums; min-width: 38px; text-align: right; }
+  .row input[type=range] { grid-column: 1 / -1; width: 100%; accent-color: #fff; height: 18px; }
+  .row input[type=color] { width: 34px; height: 22px; border: none; background: none; padding: 0; }
+  .reset { margin-top: 8px; width: 100%; background: #1c1c1c; color: #ddd; border: 1px solid #2c2c2c; border-radius: 6px; padding: 7px; font-size: 12px; cursor: pointer; }
+  .reset:hover { background: #262626; }
+</style>
+<script type="importmap">
+  { "imports": { "three": "../../shared/vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+
+<header>
+  <h1>Fluid Particles</h1>
+  <p>마우스를 글자 위로 움직이면 입자가 흩어지며 마우스를 따라 흐르다 잠잠해지면 제자리로 돌아옵니다. · <a href="./README.md">README</a></p>
+</header>
+
+<section>
+  <div id="stage1" class="stage">
+    <span class="label">text · additive · 실시간 파라미터</span>
+    <div class="panel">
+      <h3>Physics</h3>
+      <div class="row"><label>brushRadius</label><output id="o-brush">48</output><input id="i-brush" type="range" min="20" max="160" value="48"></div>
+      <div class="row"><label>sampleStrength</label><output id="o-samp">0.06</output><input id="i-samp" type="range" min="0.01" max="0.2" step="0.005" value="0.06"></div>
+      <div class="row"><label>fluidDamping</label><output id="o-fdamp">0.99</output><input id="i-fdamp" type="range" min="0.90" max="0.995" step="0.005" value="0.99"></div>
+      <div class="row"><label>returnStrength</label><output id="o-ret">50</output><input id="i-ret" type="range" min="10" max="120" value="50"></div>
+      <div class="row"><label>particleDamping</label><output id="o-pdamp">0.40</output><input id="i-pdamp" type="range" min="0.20" max="0.85" step="0.01" value="0.40"></div>
+      <div class="row"><label>color</label><input id="i-color" type="color" value="#ffffff"></div>
+      <button class="reset" id="reset1">기본값으로</button>
+    </div>
+    <span class="hint">move your cursor across the text</span>
+  </div>
+</section>
+
+<section>
+  <div id="stage2" class="stage short">
+    <span class="label">컬러 · 강한 흐름</span>
+    <span class="hint">sweep faster for stronger flow</span>
+  </div>
+</section>
+
+<script type="module">
+  import { FluidParticles } from './fluid-particles.js';
+
+  const fx1 = new FluidParticles('#stage1', {
+    text: { lines: ['start', 'with', 'mix.'] },
+    color: '#ffffff', blending: 'additive', pointSize: 2.8,
+    pointerTarget: document.getElementById('stage1'),
+  });
+
+  const fx2 = new FluidParticles('#stage2', {
+    text: { lines: ['F L U I D'], fontScale: 0.22, widthScale: 0.7, maxFont: 180 },
+    color: '#36e0ff', blending: 'additive', pointSize: 3.0,
+    brushRadius: 80, fluidDamping: 0.985, returnStrength: 34, sampleStrength: 0.08,
+    pointerTarget: document.getElementById('stage2'),
+  });
+
+  const bind = (id, key, fmt = v => v) => {
+    const input = document.getElementById('i-' + id), out = document.getElementById('o-' + id);
+    const apply = () => { const v = parseFloat(input.value); fx1.opt[key] = v; if (out) out.textContent = fmt(v); };
+    input.addEventListener('input', apply); apply();
+  };
+  bind('brush', 'brushRadius', v => v.toFixed(0));
+  bind('samp', 'sampleStrength', v => v.toFixed(3));
+  bind('fdamp', 'fluidDamping', v => v.toFixed(3));
+  bind('ret', 'returnStrength', v => v.toFixed(0));
+  bind('pdamp', 'particleDamping', v => v.toFixed(2));
+  document.getElementById('i-color').addEventListener('input', e => fx1.setColor(e.target.value));
+  document.getElementById('reset1').addEventListener('click', () => {
+    const d = { brush: 48, samp: 0.06, fdamp: 0.99, ret: 50, pdamp: 0.40 };
+    for (const [id, v] of Object.entries(d)) { const el = document.getElementById('i-' + id); el.value = v; el.dispatchEvent(new Event('input')); }
+    document.getElementById('i-color').value = '#ffffff'; fx1.setColor('#ffffff');
+  });
+  window.__fx = { fx1, fx2 };
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Depth Scroll — demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0c0c0e; color: #eaeaea; font: 14px/1.5 "Pretendard", system-ui, sans-serif; }
+  header { padding: 24px 24px 8px; }
+  header h1 { margin: 0 0 6px; font-size: 19px; }
+  header p { margin: 0; color: #9a9a9a; font-size: 13px; }
+  .stage { position: relative; width: 100%; height: 78vh; min-height: 460px; background: #0c0c0e; overflow: hidden; }
+  .hint { position: absolute; left: 24px; bottom: 16px; color: #888; font-size: 12px; letter-spacing: 0.1em; pointer-events: none; }
+</style>
+<script type="importmap">
+  { "imports": { "three": "../../shared/vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<header>
+  <h1>Depth Scroll</h1>
+  <p>스크롤 <b>속도</b>가 정점 곡률을 만들어 원근 깊이감을 낸다 — 빠를수록 공간이 휜다.</p>
+</header>
+<div id="stage" class="stage">
+  <span class="hint">scroll / drag — 빠를수록 공간이 휜다 · 마우스 이동 = 시점 패럴랙스</span>
+</div>
+<script type="module">
+  import { DepthScroll } from './depth-scroll.js';
+  const fx = new DepthScroll('#stage', {
+    images: ['img/1.webp', 'img/2.webp', 'img/3.webp', 'img/4.webp', 'img/5.webp', 'img/6.webp'],
+  });
+  window.__fx = fx; // 콘솔에서 fx.setOptions({ depth: 0.09, curve: 0.9 }) 로 실시간 조정
+</script>
+</body>
+</html>
