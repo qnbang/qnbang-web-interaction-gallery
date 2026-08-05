@@ -1,12 +1,12 @@
 {
   "name": "pleno-button-hover-swap",
-  "title": "PLENO Button Hover Swap",
-  "description": "버튼의 전경·배경과 화살표 위치를 hover/tap variant로 교대하는 CTA 피드백",
-  "whenToUse": "CTA와 푸터 링크에서 클릭 가능성을 즉시 강조할 때",
+  "title": "PLENO Button Color",
+  "description": "좌우 5행 분할 배경이 3D로 열리고 코너 글리프와 레이블 플리커가 이어지는 PLENO CTA",
+  "whenToUse": "PLENO 스타일의 CTA·푸터 링크에 강한 상태 전환을 부여할 때",
   "tags": [
     "button",
     "hover",
-    "arrow",
+    "3d",
     "cta",
     "pleno"
   ],
@@ -16,11 +16,11 @@
   "type": "class",
   "dependencies": {},
   "demo": "demo.html",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tech": [
-    "Web Animations API",
+    "CSS 3D transforms",
     "CSS transitions",
-    "requestAnimationFrame"
+    "DOM events"
   ],
   "api": {
     "constructor": "new PlenoButtonHoverSwap(root|selector, options)",
@@ -28,8 +28,8 @@
       "replay()",
       "destroy()"
     ],
-    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+    "options": "label, variant(large|plane), speed(80), intensity(.8), revealDuration(500), exponent(2.6)"
   },
-  "origin": "https://www.pleno-ent.com/ko/ — CTA and Footer ButtonColor",
+  "origin": "https://www.pleno-ent.com/ko/ — Button Color",
   "created": "2026-08-05"
 }

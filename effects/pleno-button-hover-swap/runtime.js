@@ -1,42 +1,43 @@
-const clamp=(n,a=0,b=1)=>Math.min(b,Math.max(a,n));
+const escapeHTML=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const planes=()=>'<span class="pleno-button-color__plane"></span>'.repeat(5);
+const markup=label=>`<span class="pleno-button-color__bg" aria-hidden="true"><span class="pleno-button-color__side pleno-button-color__side--left">${planes()}</span><span class="pleno-button-color__side pleno-button-color__side--right">${planes()}</span></span><span class="pleno-button-color__corner pleno-button-color__corner--tl" aria-hidden="true">⌜</span><span class="pleno-button-color__corner pleno-button-color__corner--bl" aria-hidden="true">⌞</span><span class="pleno-button-color__label">${[...label].map(char=>`<span class="pleno-button-color__letter">${char===' ' ? '&nbsp;' : escapeHTML(char)}</span>`).join('')}</span><span class="pleno-button-color__corner pleno-button-color__corner--tr" aria-hidden="true">⌝</span><span class="pleno-button-color__corner pleno-button-color__corner--br" aria-hidden="true">⌟</span>`;
+
 export function createPlenoEffect(root,kind,options={}){
- root=typeof root==='string'?document.querySelector(root):root;if(!root)throw new Error('PLENO effect root not found');
- const ac=new AbortController(), signal=ac.signal, reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
- const on=(el,type,fn,opt={})=>el?.addEventListener(type,fn,{...opt,signal});
- const rafs=new Set(), intervals=new Set(); const frame=fn=>{const id=requestAnimationFrame(fn);rafs.add(id);return id};
- const activate=()=>{root.classList.remove('is-active');void root.offsetWidth;root.classList.add('is-active')};
- const pointer=(el,fn)=>on(el,'pointermove',e=>{const r=el.getBoundingClientRect();fn(clamp((e.clientX-r.left)/r.width),clamp((e.clientY-r.top)/r.height),e)});
- let cleanup=()=>{};
- if(reduced){root.classList.add('is-active','is-reduced');}
- if(kind==='page-loader'){activate();on(root.querySelector('.replay'),'click',activate)}
- else if(kind==='route-transition'){let busy=false;on(root.querySelector('.trigger'),'click',()=>{if(busy)return;busy=true;root.classList.add('is-next');setTimeout(()=>{root.classList.remove('is-next');busy=false},900)})}
- else if(kind==='smooth-scroll'){
-   const box=root.querySelector('.scrollbox');let target=0,current=0,run=true;on(box,'wheel',e=>{e.preventDefault();target=clamp(target+e.deltaY,0,box.scrollHeight-box.clientHeight)},{passive:false});
-   const tick=()=>{if(!run)return;current+=(target-current)*.12;box.scrollTop=current;frame(tick)}; if(!reduced)tick(); cleanup=()=>{run=false};
- }
- else if(kind==='directional-navbar'){const box=root.querySelector('.scrollbox');let last=0;on(box,'scroll',()=>{const y=box.scrollTop;root.classList.toggle('is-hidden',y>last&&y>20);last=y},{passive:true})}
- else if(kind==='fullscreen-menu'){const b=root.querySelector('.menu-button');on(b,'click',()=>{const open=root.classList.toggle('is-open');b.setAttribute('aria-expanded',String(open));b.textContent=open?'CLOSE':'MENU'})}
- else if(kind==='footer-rise'||kind==='hero-parallax'||kind==='parallax-media'){
-   const box=root.querySelector('.scrollbox'), targetEl=root.querySelector('.target')||root.querySelector('footer');const update=()=>{const p=clamp(box.scrollTop/(box.scrollHeight-box.clientHeight));targetEl.style.setProperty('--p',p)};on(box,'scroll',update,{passive:true});update();
- }
- else if(['scroll-fade','character-reveal','text-mask','grid-line','mask-down'].includes(kind)){if(kind==='character-reveal'){const el=root.querySelector('.target');el.innerHTML=[...el.textContent].map((c,i)=>'<span style="animation-delay:'+(i*.02)+'s">'+(c===' '?'&nbsp;':c)+'</span>').join('')}activate();on(root.querySelector('.replay'),'click',activate);if(kind==='scroll-fade'){const box=root.querySelector('.scrollbox'),el=root.querySelector('.target');const io=new IntersectionObserver(x=>x[0].isIntersecting&&root.classList.add('is-active'),{root:box,threshold:.35});io.observe(el);cleanup=()=>io.disconnect()}}
- else if(kind==='flicker-text'){
-   const el=root.querySelector('.target'),text=el.dataset.text;let timer;const play=()=>{clearInterval(timer);let n=0;el.textContent=text;el.classList.remove('settled');timer=setInterval(()=>{el.style.opacity=String(.12+Math.random()*.88);if(++n>10){clearInterval(timer);el.style.opacity='1';el.classList.add('settled')}},options.speed||120)};play();on(root.querySelector('.replay'),'click',play);cleanup=()=>clearInterval(timer)
- }
- else if(kind==='hover-follow'){const img=root.querySelector('.follow-image');root.querySelectorAll('a').forEach(a=>{on(a,'pointerenter',()=>{img.style.background=a.dataset.color;root.classList.add('is-hover')});on(a,'pointerleave',()=>root.classList.remove('is-hover'))});pointer(root,(x,y)=>{img.style.transform='translate('+((x*100)-50)+'px,'+((y*70)-35)+'px)'})}
- else if(kind==='artist-list'){root.querySelectorAll('a').forEach(a=>{on(a,'pointerenter',()=>a.classList.add('hover'));on(a,'pointerleave',()=>a.classList.remove('hover'))})}
- else if(kind==='card-parallax'){const card=root.querySelector('.target');pointer(card,(x,y)=>{card.style.setProperty('--rx',((.5-y)*10)+'deg');card.style.setProperty('--ry',((x-.5)*12)+'deg');card.style.setProperty('--mx',(x*100)+'%');card.style.setProperty('--my',(y*100)+'%')});on(card,'pointerleave',()=>{card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg')})}
- else if(kind==='fluid-pixels'||kind==='grid-distortion'){
-   const wrap=root.querySelector('.target'),c=wrap.querySelector('canvas'),ctx=c.getContext('2d');let mx=-999,my=-999,run=true;const size=()=>{const r=wrap.getBoundingClientRect(),d=Math.min(devicePixelRatio,2);c.width=r.width*d;c.height=r.height*d;c.style.width=r.width+'px';c.style.height=r.height+'px';ctx.setTransform(d,0,0,d,0,0)};size();on(window,'resize',size);pointer(wrap,(x,y)=>{mx=x*wrap.clientWidth;my=y*wrap.clientHeight});
-   const draw=()=>{if(!run)return;const w=wrap.clientWidth,h=wrap.clientHeight;ctx.clearRect(0,0,w,h);if(kind==='fluid-pixels'){ctx.fillStyle='#e8e8e4';ctx.font='900 '+Math.min(120,w/5)+'px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.globalAlpha=.18;ctx.fillText('PLENO',w/2,h/2);ctx.globalAlpha=1;for(let y=18;y<h;y+=12)for(let x=18;x<w;x+=12){const dx=x-mx,dy=y-my,d=Math.hypot(dx,dy),f=d<90?(90-d)/90:0;ctx.fillStyle='rgba(245,245,240,'+(.18+f*.7)+')';ctx.fillRect(x+(dx/(d||1))*f*18,y+(dy/(d||1))*f*18,3+f*3,3+f*3)}}else{ctx.strokeStyle='rgba(245,245,240,.38)';ctx.lineWidth=1;for(let y=0;y<=h;y+=18){ctx.beginPath();for(let x=0;x<=w;x+=12){const dx=x-mx,dy=y-my,d=Math.hypot(dx,dy),f=d<100?(100-d)/100:0;const yy=y+(dy/(d||1))*f*28;x?ctx.lineTo(x,yy):ctx.moveTo(x,yy)}ctx.stroke()}for(let x=0;x<=w;x+=18){ctx.beginPath();for(let y=0;y<=h;y+=12){const dx=x-mx,dy=y-my,d=Math.hypot(dx,dy),f=d<100?(100-d)/100:0;const xx=x+(dx/(d||1))*f*28;y?ctx.lineTo(xx,y):ctx.moveTo(xx,y)}ctx.stroke()}}frame(draw)};draw();cleanup=()=>{run=false}
- }
- else if(kind==='counter'){const el=root.querySelector('.target'),to=+el.dataset.to;let id;const play=()=>{cancelAnimationFrame(id);const s=performance.now(),dur=1200;const tick=t=>{const p=clamp((t-s)/dur),e=1-Math.pow(1-p,4);el.textContent=String(Math.round(to*e)).padStart(3,'0');if(p<1)id=requestAnimationFrame(tick)};id=requestAnimationFrame(tick)};play();on(root.querySelector('.replay'),'click',play);cleanup=()=>cancelAnimationFrame(id)}
- else if(kind==='slideshow'){const track=root.querySelector('.track'),slides=[...track.children],dots=root.querySelector('.dots');let i=0;slides.forEach((_,n)=>{const b=document.createElement('button');b.setAttribute('aria-label','Slide '+(n+1));on(b,'click',()=>go(n));dots.append(b)});const go=n=>{i=(n+slides.length)%slides.length;track.style.transform='translateX('+(-i*100)+'%)';[...dots.children].forEach((d,n)=>d.classList.toggle('on',n===i))};on(root.querySelector('.next'),'click',()=>go(i+1));on(root.querySelector('.prev'),'click',()=>go(i-1));go(0);const timer=setInterval(()=>go(i+1),3200);intervals.add(timer)}
- else if(kind==='accordion'){const buttons=root.querySelectorAll('.accordion button');buttons.forEach(b=>on(b,'click',()=>{const was=b.getAttribute('aria-expanded')==='true';buttons.forEach(x=>x.setAttribute('aria-expanded','false'));b.setAttribute('aria-expanded',String(!was))}))}
- else if(kind==='form-states'){const form=root.querySelector('form'),status=form.querySelector('.status'),button=form.querySelector('button');on(form,'submit',e=>{e.preventDefault();if(!form.checkValidity()){status.textContent='INCOMPLETE';return}button.disabled=true;status.textContent='SENDING…';root.classList.add('is-pending');setTimeout(()=>{root.classList.remove('is-pending');root.classList.add('is-success');status.textContent='SUCCESS';button.innerHTML='SENT <span>✓</span>';button.disabled=false},900)})}
- else if(kind==='bulge'){const art=root.querySelector('.bulge-art');activate();pointer(root.querySelector('.target'),(x,y)=>{art.style.setProperty('--x',(x*100)+'%');art.style.setProperty('--y',(y*100)+'%');art.style.setProperty('--s',String(1.02+Math.hypot(x-.5,y-.5)*.08))})}
- else if(kind==='spinner'){const b=root.querySelector('.trigger');root.classList.add('is-loading');on(b,'click',()=>root.classList.toggle('is-loading'))}
- else if(kind==='button-swap'){const b=root.querySelector('.target');on(b,'pointerdown',()=>b.classList.add('is-tap'));on(b,'pointerup',()=>b.classList.remove('is-tap'));on(b,'pointercancel',()=>b.classList.remove('is-tap'))}
- return {root,replay:activate,destroy(){ac.abort();cleanup();rafs.forEach(cancelAnimationFrame);intervals.forEach(clearInterval)}};
+  if(kind!=='button-swap')throw new Error(`Unsupported PLENO effect: ${kind}`);
+  root=typeof root==='string'?document.querySelector(root):root;
+  if(!root)throw new Error('PLENO Button Color root not found');
+  const link=root.matches?.('a')?root:root.querySelector('a.target, a.pleno-button-color');
+  if(!link)throw new Error('PLENO Button Color requires a link root or a link.target');
+  const controller=new AbortController(),{signal}=controller;
+  const on=(element,type,handler,options={})=>element?.addEventListener(type,handler,{...options,signal});
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const label=options.label||link.dataset.label||link.textContent.trim()||'CONTACT';
+  const variant=options.variant||link.dataset.variant;
+  link.classList.add('pleno-button-color');
+  link.classList.toggle('pleno-button-color--large',variant==='large');
+  link.classList.toggle('pleno-button-color--plane',variant==='plane');
+  link.setAttribute('aria-label',link.getAttribute('aria-label')||label);
+  link.innerHTML=markup(label);
+  const letters=[...link.querySelectorAll('.pleno-button-color__letter')];
+  const speed=options.speed??80,duration=options.revealDuration??500,intensity=options.intensity??.8,exponent=options.exponent??2.6;
+  let timer=0,previewTimer=0;
+  const flicker=()=>{
+    if(reduced)return;
+    clearInterval(timer);const start=performance.now();
+    link.classList.remove('is-flickering');void link.offsetWidth;link.classList.add('is-flickering');
+    timer=setInterval(()=>{const progress=Math.min(1,(performance.now()-start)/duration);letters.forEach((letter,index)=>{const stagger=index/Math.max(1,letters.length-1);const revealed=Math.min(1,Math.max(0,(progress-stagger*.18)/.82));letter.style.setProperty('--flicker',String(Math.pow(Math.random(),exponent)*intensity*(1-revealed)))});if(progress===1){clearInterval(timer);letters.forEach(letter=>letter.style.removeProperty('--flicker'));link.classList.remove('is-flickering')}},speed);
+  };
+  const replay=()=>{
+    flicker();
+    if(reduced)return;
+    clearTimeout(previewTimer);link.classList.remove('is-preview');void link.offsetWidth;link.classList.add('is-preview');
+    previewTimer=setTimeout(()=>link.classList.remove('is-preview'),1400);
+  };
+  on(link,'pointerenter',event=>{if(event.pointerType!=='touch')flicker()});on(link,'focusin',flicker);
+  on(link,'pointerdown',()=>link.classList.add('is-tap'));on(link,'pointerup',()=>link.classList.remove('is-tap'));on(link,'pointercancel',()=>link.classList.remove('is-tap'));
+  const replayButton=root===link?null:root.querySelector('.pleno-button-replay');
+  on(replayButton,'click',replay);
+  return {root, replay, destroy(){clearInterval(timer);clearTimeout(previewTimer);link.classList.remove('is-preview');controller.abort()}};
 }
+
 export default createPlenoEffect;

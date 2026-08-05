@@ -1,17 +1,16 @@
 # PLENO Grid Distortion
 
-이미지 UV 격자를 포인터 근처에서 휘게 만드는 WebGL 스타일 왜곡
+이미지 texture와 grid 크기의 displacement Data Texture를 사용하는 raw WebGL 모자이크 왜곡입니다. 포인터 속도를 가까운 셀에 누적하고, GLSL에서 `texture2D(uTexture, uv - 0.02 * offset.rg)`로 샘플 좌표를 이동합니다.
 
 ## 원본 적용 위치
 
-- Home, CTA, Footer GridDistortion
-- 원본 클론: `G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중`
+- [PLENO Grid Distortion / Image w mosaic](https://www.pleno-ent.com/ko/)
 
 ## 모션 사양
 
-- grid 70/93 · hover multiplier 1.5 · DPR cap 2
-- 트리거와 상태 전이는 원본 Framer 소스맵과 실제 미러 런타임을 함께 대조했다.
-- `prefers-reduced-motion: reduce`에서는 반복·공간 이동을 즉시 완료한다.
+- 기본값: grid 70, mouse .3, strength .15, relaxation .9, hover multiplier 1.5, DPR cap 2
+- `pointerenter`/`pointermove`는 inverse-distance(최대 10) 가중치로 velocity를 셀에 누적합니다. leave 뒤에는 relaxation으로 자연 복귀합니다.
+- WebGL 또는 texture 초기화가 실패하면 정적 이미지로 안전하게 폴백합니다. `prefers-reduced-motion: reduce`도 정적 이미지를 렌더합니다.
 
 ## 사용
 

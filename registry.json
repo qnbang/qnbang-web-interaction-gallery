@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T09:24:13.751Z",
+  "generatedAt": "2026-08-05T10:49:17.771Z",
   "count": 49,
   "effects": [
     {
@@ -730,7 +730,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Contact Notice / Accordion_1",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Contact Notice / Accordion_1",
       "created": "2026-08-05",
       "path": "effects/pleno-accordion",
       "hasDemo": true,
@@ -776,7 +776,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — ButtonColor / AnimatedCounter",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — ButtonColor / AnimatedCounter",
       "created": "2026-08-05",
       "path": "effects/pleno-animated-counter",
       "hasDemo": true,
@@ -822,7 +822,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Artists WorkTypeDirection + List Item Default/On Hover",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Artists WorkTypeDirection + List Item Default/On Hover",
       "created": "2026-08-05",
       "path": "effects/pleno-artist-list-hover",
       "hasDemo": true,
@@ -868,7 +868,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — 404 BulgeDistortion",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — 404 BulgeDistortion",
       "created": "2026-08-05",
       "path": "effects/pleno-bulge-distortion",
       "hasDemo": true,
@@ -884,13 +884,13 @@
     },
     {
       "name": "pleno-button-hover-swap",
-      "title": "PLENO Button Hover Swap",
-      "description": "버튼의 전경·배경과 화살표 위치를 hover/tap variant로 교대하는 CTA 피드백",
-      "whenToUse": "CTA와 푸터 링크에서 클릭 가능성을 즉시 강조할 때",
+      "title": "PLENO Button Color",
+      "description": "좌우 5행 분할 배경이 3D로 열리고 코너 글리프와 레이블 플리커가 이어지는 PLENO CTA",
+      "whenToUse": "PLENO 스타일의 CTA·푸터 링크에 강한 상태 전환을 부여할 때",
       "tags": [
         "button",
         "hover",
-        "arrow",
+        "3d",
         "cta",
         "pleno"
       ],
@@ -900,11 +900,11 @@
       "type": "class",
       "dependencies": {},
       "demo": "demo.html",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "tech": [
-        "Web Animations API",
+        "CSS 3D transforms",
         "CSS transitions",
-        "requestAnimationFrame"
+        "DOM events"
       ],
       "api": {
         "constructor": "new PlenoButtonHoverSwap(root|selector, options)",
@@ -912,9 +912,9 @@
           "replay()",
           "destroy()"
         ],
-        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+        "options": "label, variant(large|plane), speed(80), intensity(.8), revealDuration(500), exponent(2.6)"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — CTA and Footer ButtonColor",
+      "origin": "https://www.pleno-ent.com/ko/ — Button Color",
       "created": "2026-08-05",
       "path": "effects/pleno-button-hover-swap",
       "hasDemo": true,
@@ -960,7 +960,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Artist detail CardParallax",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home, Artists, Artist detail CardParallax",
       "created": "2026-08-05",
       "path": "effects/pleno-card-parallax",
       "hasDemo": true,
@@ -1006,7 +1006,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Contact, Artist detail, CTA",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home, Artists, Contact, Artist detail, CTA",
       "created": "2026-08-05",
       "path": "effects/pleno-character-reveal",
       "hasDemo": true,
@@ -1052,7 +1052,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home CyclingWave (CyclingRings)",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home CyclingWave (CyclingRings)",
       "created": "2026-08-05",
       "path": "effects/pleno-cycling-rings",
       "hasDemo": true,
@@ -1098,7 +1098,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Global Navbar",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Global Navbar",
       "created": "2026-08-05",
       "path": "effects/pleno-directional-navbar",
       "hasDemo": true,
@@ -1144,7 +1144,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Artists, Contact, Artist detail AnimatedTextReveal",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Artists, Contact, Artist detail AnimatedTextReveal",
       "created": "2026-08-05",
       "path": "effects/pleno-flicker-text-reveal",
       "hasDemo": true,
@@ -1161,8 +1161,8 @@
     {
       "name": "pleno-fluid-pixels",
       "title": "PLENO Fluid Pixels",
-      "description": "이미지를 입자 격자로 샘플링해 커서 반발·소용돌이·복귀력으로 변형하는 캔버스 효과",
-      "whenToUse": "로고·인물·그래픽에 직접 만지는 듯한 유기적 반응을 줄 때",
+      "description": "이미지의 실제 RGBA 픽셀을 격자 파티클로 분해해 포인터 반발·소용돌이·재조립을 구현한다.",
+      "whenToUse": "투명 PNG 로고·인물 이미지를 직접 만지는 듯하게 반응시킬 때",
       "tags": [
         "canvas",
         "particles",
@@ -1176,31 +1176,33 @@
       "type": "class",
       "dependencies": {},
       "demo": "demo.html",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "tech": [
-        "Web Animations API",
-        "CSS transitions",
+        "Canvas 2D",
+        "getImageData",
         "requestAnimationFrame"
       ],
       "api": {
         "constructor": "new PlenoFluidPixels(root|selector, options)",
         "methods": [
+          "setImage(src)",
           "replay()",
           "destroy()"
         ],
-        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+        "options": "particleSize, radius, repulsion, returnSpeed, friction, swirl, elasticity, fadeDuration"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home, Footer, CardParallax FluidPixelsEffect",
+      "origin": "https://www.pleno-ent.com/ko/ — Fluid Pixel Text",
       "created": "2026-08-05",
       "path": "effects/pleno-fluid-pixels",
       "hasDemo": true,
       "hasPreview": false,
       "files": [
+        "chrome-face.png",
+        "chrome-head.png",
         "demo.html",
         "effect.json",
         "pleno-fluid-pixels.js",
         "README.md",
-        "runtime.js",
         "style.css"
       ]
     },
@@ -1236,7 +1238,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Global footer / backup-footer targets",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Global footer / backup-footer targets",
       "created": "2026-08-05",
       "path": "effects/pleno-footer-scroll-rise",
       "hasDemo": true,
@@ -1282,7 +1284,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Contact Button Form Email",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Contact Button Form Email",
       "created": "2026-08-05",
       "path": "effects/pleno-form-submit-states",
       "hasDemo": true,
@@ -1328,7 +1330,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Global Main overlay",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Global Main overlay",
       "created": "2026-08-05",
       "path": "effects/pleno-fullscreen-menu",
       "hasDemo": true,
@@ -1345,7 +1347,7 @@
     {
       "name": "pleno-grid-distortion",
       "title": "PLENO Grid Distortion",
-      "description": "이미지 UV 격자를 포인터 근처에서 휘게 만드는 WebGL 스타일 왜곡",
+      "description": "이미지와 displacement Data Texture를 이용해 포인터 속도로 모자이크 UV를 왜곡하는 raw WebGL 효과",
       "whenToUse": "히어로·CTA·푸터의 큰 이미지에 국소적인 렌즈 반응을 줄 때",
       "tags": [
         "webgl",
@@ -1360,10 +1362,11 @@
       "type": "class",
       "dependencies": {},
       "demo": "demo.html",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "tech": [
-        "Web Animations API",
-        "CSS transitions",
+        "WebGL",
+        "GLSL",
+        "Data Texture",
         "requestAnimationFrame"
       ],
       "api": {
@@ -1372,9 +1375,9 @@
           "replay()",
           "destroy()"
         ],
-        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+        "options": "grid(70), mouse(.3), strength(.15), relaxation(.9), hoverMultiplier(1.5)"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home, CTA, Footer GridDistortion",
+      "origin": "https://www.pleno-ent.com/ko/ — Grid Distortion / Image w mosaic",
       "created": "2026-08-05",
       "path": "effects/pleno-grid-distortion",
       "hasDemo": true,
@@ -1383,6 +1386,7 @@
         "demo.html",
         "effect.json",
         "pleno-grid-distortion.js",
+        "pleno-mosaic.png",
         "README.md",
         "runtime.js",
         "style.css"
@@ -1420,7 +1424,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — GridLine across all page types",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — GridLine across all page types",
       "created": "2026-08-05",
       "path": "effects/pleno-grid-line-reveal",
       "hasDemo": true,
@@ -1466,7 +1470,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Artists and Contact hero withFX speed=120",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Artists and Contact hero withFX speed=120",
       "created": "2026-08-05",
       "path": "effects/pleno-hero-parallax",
       "hasDemo": true,
@@ -1512,7 +1516,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Artists List Item / HoverImageFollow",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Artists List Item / HoverImageFollow",
       "created": "2026-08-05",
       "path": "effects/pleno-hover-image-follow",
       "hasDemo": true,
@@ -1558,7 +1562,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Artists collection Spinner Loading/Hidden",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Artists collection Spinner Loading/Hidden",
       "created": "2026-08-05",
       "path": "effects/pleno-infinite-spinner",
       "hasDemo": true,
@@ -1604,7 +1608,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — All routes — Lenis smooth=true, intensity=12",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — All routes — Lenis smooth=true, intensity=12",
       "created": "2026-08-05",
       "path": "effects/pleno-lenis-smooth-scroll",
       "hasDemo": true,
@@ -1650,7 +1654,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Contact ScrollRevealImage",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Contact ScrollRevealImage",
       "created": "2026-08-05",
       "path": "effects/pleno-mask-down-image-reveal",
       "hasDemo": true,
@@ -1696,7 +1700,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home OBSESSIONS STORYTELLING",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home OBSESSIONS STORYTELLING",
       "created": "2026-08-05",
       "path": "effects/pleno-obsession-orbits",
       "hasDemo": true,
@@ -1742,7 +1746,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home / Loading — Start → On Mount → End, desktop/mobile variants",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home / Loading — Start → On Mount → End, desktop/mobile variants",
       "created": "2026-08-05",
       "path": "effects/pleno-page-loader-sequence",
       "hasDemo": true,
@@ -1788,7 +1792,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Work Slide Media, CardParallax, Artist detail",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Work Slide Media, CardParallax, Artist detail",
       "created": "2026-08-05",
       "path": "effects/pleno-parallax-media",
       "hasDemo": true,
@@ -1834,7 +1838,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Global PageEffectsProvider",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Global PageEffectsProvider",
       "created": "2026-08-05",
       "path": "effects/pleno-route-transition",
       "hasDemo": true,
@@ -1880,7 +1884,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Contact, Detail generated appear effects",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home, Artists, Contact, Detail generated appear effects",
       "created": "2026-08-05",
       "path": "effects/pleno-scroll-fade-in",
       "hasDemo": true,
@@ -1926,7 +1930,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home press/news: 3 responsive instances",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home press/news: 3 responsive instances",
       "created": "2026-08-05",
       "path": "effects/pleno-slideshow",
       "hasDemo": true,
@@ -1972,7 +1976,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Home and Artist detail TextMask",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Home and Artist detail TextMask",
       "created": "2026-08-05",
       "path": "effects/pleno-text-mask-reveal",
       "hasDemo": true,
@@ -2018,7 +2022,7 @@
         ],
         "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
       },
-      "origin": "https://www.pleno-ent.com/ko/ — Global menu/footer, Contact, 404",
+      "origin": "G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중 — Global menu/footer, Contact, 404",
       "created": "2026-08-05",
       "path": "effects/pleno-underline-hover-link",
       "hasDemo": true,

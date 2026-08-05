@@ -1,7 +1,7 @@
 {
   "name": "pleno-grid-distortion",
   "title": "PLENO Grid Distortion",
-  "description": "이미지 UV 격자를 포인터 근처에서 휘게 만드는 WebGL 스타일 왜곡",
+  "description": "이미지와 displacement Data Texture를 이용해 포인터 속도로 모자이크 UV를 왜곡하는 raw WebGL 효과",
   "whenToUse": "히어로·CTA·푸터의 큰 이미지에 국소적인 렌즈 반응을 줄 때",
   "tags": [
     "webgl",
@@ -16,10 +16,11 @@
   "type": "class",
   "dependencies": {},
   "demo": "demo.html",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tech": [
-    "Web Animations API",
-    "CSS transitions",
+    "WebGL",
+    "GLSL",
+    "Data Texture",
     "requestAnimationFrame"
   ],
   "api": {
@@ -28,8 +29,8 @@
       "replay()",
       "destroy()"
     ],
-    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+    "options": "grid(70), mouse(.3), strength(.15), relaxation(.9), hoverMultiplier(1.5)"
   },
-  "origin": "https://www.pleno-ent.com/ko/ — Home, CTA, Footer GridDistortion",
+  "origin": "https://www.pleno-ent.com/ko/ — Grid Distortion / Image w mosaic",
   "created": "2026-08-05"
 }

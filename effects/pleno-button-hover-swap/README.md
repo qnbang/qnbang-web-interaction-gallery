@@ -1,25 +1,24 @@
-# PLENO Button Hover Swap
+# PLENO Button Color
 
-버튼의 전경·배경과 화살표 위치를 hover/tap variant로 교대하는 CTA 피드백
+PLENO의 Button Color CTA를 재현합니다. 링크를 루트로 유지하고 좌·우 5개씩의 회색 3D 블록, 코너 글리프, 글자별 플리커를 결합합니다.
 
 ## 원본 적용 위치
 
-- CTA and Footer ButtonColor
-- 원본 클론: `G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중`
+- 원본: https://www.pleno-ent.com/ko/ (Button Color)
 
 ## 모션 사양
 
-- spring .4s bounce .2; fine-pointer hover; tap feedback
-- 트리거와 상태 전이는 원본 Framer 소스맵과 실제 미러 런타임을 함께 대조했다.
-- `prefers-reduced-motion: reduce`에서는 반복·공간 이동을 즉시 완료한다.
+- fine pointer hover와 keyboard focus에서 `.7s cubic-bezier(.6,.2,0,1)`로 10개 블록이 열립니다.
+- 행 지연은 `.10/.06/.05/.06/.10s`이며, 레이블은 80ms 간격으로 500ms 동안 랜덤 플리커합니다.
+- `prefers-reduced-motion: reduce`에서는 3D·플리커 없이 최종 프레임을 표시합니다.
 
 ## 사용
 
 ```js
 import { PlenoButtonHoverSwap } from './pleno-button-hover-swap.js';
-const effect = new PlenoButtonHoverSwap('#effect');
+const effect = new PlenoButtonHoverSwap('.button-unit', { label: 'CONTACT', variant: 'large' });
 // effect.replay();
 // effect.destroy();
 ```
 
-CTA와 푸터 링크에서 클릭 가능성을 즉시 강조할 때
+`root`가 컨테이너면 내부의 `a.target`을, 링크 자체면 그 링크를 사용합니다. 터치 환경에서는 링크 밖의 `.pleno-button-replay`(44×44px)를 두면 `replay()`와 같은 플리커를 다시 실행합니다.

@@ -1,25 +1,15 @@
 # PLENO Fluid Pixels
 
-이미지를 입자 격자로 샘플링해 커서 반발·소용돌이·복귀력으로 변형하는 캔버스 효과
+Canvas 2D의 offscreen canvas와 `getImageData()`로 실제 PNG의 RGBA 픽셀을 샘플링하는 효과입니다. 각 격자는 원래 색·위치·속도·`returnScale`을 보존하며, 포인터 속도에 따라 반발과 소용돌이를 만들고 원위치로 복귀합니다.
 
-## 원본 적용 위치
-
-- Home, Footer, CardParallax FluidPixelsEffect
-- 원본 클론: `G:/.Codex/projects/260805_플레노엔터테인먼트_전체사이트클론/4_작업중`
-
-## 모션 사양
-
-- radius 30/65; friction .8/.89; elasticity .15/.75; return .01; DPR capped
-- 트리거와 상태 전이는 원본 Framer 소스맵과 실제 미러 런타임을 함께 대조했다.
-- `prefers-reduced-motion: reduce`에서는 반복·공간 이동을 즉시 완료한다.
-
-## 사용
+기본값은 `particleSize: 6`, `radius: 65`, `repulsion: 6`, `returnSpeed: .01`, `friction: .89`, `swirl: .3`, `elasticity: .75`, 0.3초 fade이며 최대 파티클은 20,000개입니다. `prefers-reduced-motion`에서는 원본 이미지를 정적으로 표시합니다.
 
 ```js
 import { PlenoFluidPixels } from './pleno-fluid-pixels.js';
-const effect = new PlenoFluidPixels('#effect');
-// effect.replay();
-// effect.destroy();
+const effect = new PlenoFluidPixels('#effect', { image: './chrome-head.png' });
+effect.setImage('./chrome-face.png');
+effect.replay();
+effect.destroy();
 ```
 
-로고·인물·그래픽에 직접 만지는 듯한 유기적 반응을 줄 때
+원본: https://www.pleno-ent.com/ko/ / Fluid Pixel Text
