@@ -1,0 +1,35 @@
+{
+  "name": "pleno-infinite-spinner",
+  "title": "PLENO Infinite Spinner",
+  "description": "컬렉션 추가 로딩 중 점/링이 반복 회전하고 완료 시 숨겨지는 로더",
+  "whenToUse": "무한 목록의 다음 묶음을 가져오는 동안 작은 진행 상태가 필요할 때",
+  "tags": [
+    "spinner",
+    "loading",
+    "infinite-scroll",
+    "loop",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-infinite-spinner.js",
+  "export": "PlenoInfiniteSpinner",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoInfiniteSpinner(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Artists collection Spinner Loading/Hidden",
+  "created": "2026-08-05"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pleno-lenis-smooth-scroll",
+  "title": "PLENO Lenis Smooth Scroll",
+  "description": "휠 입력을 감쇠 보간하는 세로 스무스 스크롤",
+  "whenToUse": "긴 에디토리얼 페이지에서 스크롤과 패럴랙스의 시간축을 안정화할 때",
+  "tags": [
+    "scroll",
+    "lenis",
+    "inertia",
+    "smooth",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-lenis-smooth-scroll.js",
+  "export": "PlenoLenisSmoothScroll",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoLenisSmoothScroll(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — All routes — Lenis smooth=true, intensity=12",
+  "created": "2026-08-05"
+}

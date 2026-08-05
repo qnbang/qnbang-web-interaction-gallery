@@ -1,0 +1,35 @@
+{
+  "name": "pleno-underline-hover-link",
+  "title": "PLENO Underline Hover Link",
+  "description": "밑줄이 한쪽으로 빠진 뒤 반대편에서 다시 그려지는 링크 hover",
+  "whenToUse": "전화·메뉴·푸터처럼 반복되는 텍스트 링크에 일관된 피드백을 줄 때",
+  "tags": [
+    "link",
+    "hover",
+    "underline",
+    "wipe",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-underline-hover-link.js",
+  "export": "PlenoUnderlineHoverLink",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoUnderlineHoverLink(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Global menu/footer, Contact, 404",
+  "created": "2026-08-05"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pleno-page-loader-sequence",
+  "title": "PLENO Page Loader Sequence",
+  "description": "첫 방문에서 브랜드 워드마크를 마스킹·슬라이드하고 본문을 인계하는 3단 로더",
+  "whenToUse": "홈 최초 진입의 브랜드 인트로와 초기 자산 로딩 지연을 하나의 연출로 감출 때",
+  "tags": [
+    "loader",
+    "intro",
+    "mask",
+    "sequence",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-page-loader-sequence.js",
+  "export": "PlenoPageLoaderSequence",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoPageLoaderSequence(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home / Loading — Start → On Mount → End, desktop/mobile variants",
+  "created": "2026-08-05"
+}

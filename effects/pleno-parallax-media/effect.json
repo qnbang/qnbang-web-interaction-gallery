@@ -1,0 +1,35 @@
+{
+  "name": "pleno-parallax-media",
+  "title": "PLENO Parallax Media",
+  "description": "클리핑된 프레임 안의 이미지가 세로 스크롤에 반대 방향으로 이동하는 미디어 패럴랙스",
+  "whenToUse": "아티스트 카드와 상세 이미지에 깊이를 주되 프레임 위치는 고정할 때",
+  "tags": [
+    "media",
+    "image",
+    "scroll",
+    "parallax",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-parallax-media.js",
+  "export": "PlenoParallaxMedia",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoParallaxMedia(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Work Slide Media, CardParallax, Artist detail",
+  "created": "2026-08-05"
+}

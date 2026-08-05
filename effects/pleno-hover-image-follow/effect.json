@@ -1,0 +1,35 @@
+{
+  "name": "pleno-hover-image-follow",
+  "title": "PLENO Hover Image Follow",
+  "description": "리스트 행을 호버하면 대응 이미지가 커서를 부드럽게 추종하며 진입·퇴장하는 효과",
+  "whenToUse": "텍스트 인덱스에 썸네일 문맥을 추가하면서 목록 밀도를 유지할 때",
+  "tags": [
+    "hover",
+    "cursor",
+    "image",
+    "follow",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-hover-image-follow.js",
+  "export": "PlenoHoverImageFollow",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoHoverImageFollow(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Artists List Item / HoverImageFollow",
+  "created": "2026-08-05"
+}

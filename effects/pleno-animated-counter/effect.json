@@ -1,0 +1,35 @@
+{
+  "name": "pleno-animated-counter",
+  "title": "PLENO Animated Counter",
+  "description": "뷰포트 진입 시 숫자를 목표값까지 보간하고 포맷을 유지하는 카운터",
+  "whenToUse": "성과 수치·연도·지표를 정적인 텍스트보다 선명하게 인지시킬 때",
+  "tags": [
+    "number",
+    "counter",
+    "in-view",
+    "tween",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-animated-counter.js",
+  "export": "PlenoAnimatedCounter",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoAnimatedCounter(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — ButtonColor / AnimatedCounter",
+  "created": "2026-08-05"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pleno-character-reveal",
+  "title": "PLENO Character Reveal",
+  "description": "글자를 분해해 아래/오른쪽 이동과 회전을 조합한 스태거 리빌",
+  "whenToUse": "히어로 제목·연도·CTA처럼 한 문장을 강하게 시작할 때",
+  "tags": [
+    "text",
+    "character",
+    "stagger",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-character-reveal.js",
+  "export": "PlenoCharacterReveal",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoCharacterReveal(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Contact, Artist detail, CTA",
+  "created": "2026-08-05"
+}

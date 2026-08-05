@@ -1,0 +1,35 @@
+{
+  "name": "pleno-accordion",
+  "title": "PLENO Accordion",
+  "description": "질문 탭 시 높이·opacity·콘텐츠 y와 plus 아이콘 회전을 함께 전환하는 아코디언",
+  "whenToUse": "문의 페이지의 공지·FAQ처럼 긴 답변을 접어 둘 때",
+  "tags": [
+    "accordion",
+    "height",
+    "icon",
+    "tap",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-accordion.js",
+  "export": "PlenoAccordion",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoAccordion(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Contact Notice / Accordion_1",
+  "created": "2026-08-05"
+}

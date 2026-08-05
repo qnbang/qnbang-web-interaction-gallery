@@ -1,0 +1,35 @@
+{
+  "name": "pleno-form-submit-states",
+  "title": "PLENO Form Submit States",
+  "description": "폼의 incomplete·pending·success·error 상태에 따라 버튼 라벨과 진행 피드백을 전환",
+  "whenToUse": "이메일 문의 폼에서 제출 결과를 같은 버튼 자리에서 명확히 알려 줄 때",
+  "tags": [
+    "form",
+    "button",
+    "loading",
+    "state",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-form-submit-states.js",
+  "export": "PlenoFormSubmitStates",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoFormSubmitStates(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Contact Button Form Email",
+  "created": "2026-08-05"
+}

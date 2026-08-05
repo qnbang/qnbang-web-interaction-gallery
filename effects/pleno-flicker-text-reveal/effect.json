@@ -1,0 +1,35 @@
+{
+  "name": "pleno-flicker-text-reveal",
+  "title": "PLENO Flicker Text Reveal",
+  "description": "문자가 랜덤한 명멸을 거쳐 최종 불투명도로 정착하는 텍스트 리빌",
+  "whenToUse": "캡션·메타데이터에 디지털 질감을 더하되 레이아웃은 움직이지 않을 때",
+  "tags": [
+    "text",
+    "flicker",
+    "random",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-flicker-text-reveal.js",
+  "export": "PlenoFlickerTextReveal",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoFlickerTextReveal(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Artists, Contact, Artist detail AnimatedTextReveal",
+  "created": "2026-08-05"
+}

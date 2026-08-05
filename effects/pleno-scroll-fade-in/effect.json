@@ -1,0 +1,35 @@
+{
+  "name": "pleno-scroll-fade-in",
+  "title": "PLENO Scroll Fade In",
+  "description": "요소가 뷰포트 임계점에 닿을 때 opacity를 올리는 기본 섹션 등장",
+  "whenToUse": "텍스트·카드·폼 블록의 정보 위계를 순차적으로 드러낼 때",
+  "tags": [
+    "scroll",
+    "in-view",
+    "fade",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-scroll-fade-in.js",
+  "export": "PlenoScrollFadeIn",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoScrollFadeIn(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Contact, Detail generated appear effects",
+  "created": "2026-08-05"
+}

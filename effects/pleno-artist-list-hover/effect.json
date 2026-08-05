@@ -1,0 +1,35 @@
+{
+  "name": "pleno-artist-list-hover",
+  "title": "PLENO Artist List Hover",
+  "description": "아티스트 행의 제목 클립·인덱스·화살표·추종 이미지가 하나의 hover 상태로 전환되는 합성 인터랙션",
+  "whenToUse": "아티스트·프로젝트 디렉터리에서 행 전체를 큰 클릭 타깃으로 만들 때",
+  "tags": [
+    "hover",
+    "list",
+    "artist",
+    "variant",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-artist-list-hover.js",
+  "export": "PlenoArtistListHover",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoArtistListHover(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Artists WorkTypeDirection + List Item Default/On Hover",
+  "created": "2026-08-05"
+}

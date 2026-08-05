@@ -1,0 +1,35 @@
+{
+  "name": "pleno-mask-down-image-reveal",
+  "title": "PLENO Mask-down Image Reveal",
+  "description": "이미지 마스크가 위에서 아래로 열리고 내부 이미지는 미세하게 역이동하는 리빌",
+  "whenToUse": "문의·소개 페이지의 단일 키 비주얼을 장면처럼 공개할 때",
+  "tags": [
+    "image",
+    "mask",
+    "scroll",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-mask-down-image-reveal.js",
+  "export": "PlenoMaskDownImageReveal",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoMaskDownImageReveal(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Contact ScrollRevealImage",
+  "created": "2026-08-05"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pleno-grid-line-reveal",
+  "title": "PLENO Grid Line Reveal",
+  "description": "세로 그리드 라인이 위쪽 오프셋에서 내려오며 순차적으로 그려지는 구조선 리빌",
+  "whenToUse": "에디토리얼 그리드를 장식이 아니라 장면 전환 장치로 사용할 때",
+  "tags": [
+    "grid",
+    "line",
+    "stagger",
+    "in-view",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-grid-line-reveal.js",
+  "export": "PlenoGridLineReveal",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoGridLineReveal(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — GridLine across all page types",
+  "created": "2026-08-05"
+}

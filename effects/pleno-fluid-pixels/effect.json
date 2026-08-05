@@ -1,0 +1,35 @@
+{
+  "name": "pleno-fluid-pixels",
+  "title": "PLENO Fluid Pixels",
+  "description": "이미지를 입자 격자로 샘플링해 커서 반발·소용돌이·복귀력으로 변형하는 캔버스 효과",
+  "whenToUse": "로고·인물·그래픽에 직접 만지는 듯한 유기적 반응을 줄 때",
+  "tags": [
+    "canvas",
+    "particles",
+    "pointer",
+    "fluid",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-fluid-pixels.js",
+  "export": "PlenoFluidPixels",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoFluidPixels(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home, Footer, CardParallax FluidPixelsEffect",
+  "created": "2026-08-05"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pleno-hero-parallax",
+  "title": "PLENO Hero Parallax",
+  "description": "첫 화면 헤드라인이 스크롤 속도와 다른 비율로 이동하는 히어로 패럴랙스",
+  "whenToUse": "대형 타이포 히어로에 깊이와 다음 섹션 진입감을 줄 때",
+  "tags": [
+    "hero",
+    "scroll",
+    "parallax",
+    "headline",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-hero-parallax.js",
+  "export": "PlenoHeroParallax",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoHeroParallax(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Artists and Contact hero withFX speed=120",
+  "created": "2026-08-05"
+}

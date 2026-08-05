@@ -1,0 +1,35 @@
+{
+  "name": "pleno-slideshow",
+  "title": "PLENO Slideshow",
+  "description": "자동재생·화살표·드래그·무한 순환을 지원하는 가로 슬라이드쇼",
+  "whenToUse": "뉴스·프레스·이미지 카드 묶음을 한 뷰에서 넘길 때",
+  "tags": [
+    "carousel",
+    "slideshow",
+    "drag",
+    "autoplay",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-slideshow.js",
+  "export": "PlenoSlideshow",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoSlideshow(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home press/news: 3 responsive instances",
+  "created": "2026-08-05"
+}

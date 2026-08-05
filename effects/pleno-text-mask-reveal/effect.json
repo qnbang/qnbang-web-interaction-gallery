@@ -1,0 +1,35 @@
+{
+  "name": "pleno-text-mask-reveal",
+  "title": "PLENO Text Mask Reveal",
+  "description": "줄 단위 마스크 안에서 텍스트가 위로 열리는 인뷰 리빌",
+  "whenToUse": "문장형 선언문과 섹션 헤드라인을 절제해서 등장시킬 때",
+  "tags": [
+    "text",
+    "mask",
+    "in-view",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-text-mask-reveal.js",
+  "export": "PlenoTextMaskReveal",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoTextMaskReveal(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home and Artist detail TextMask",
+  "created": "2026-08-05"
+}

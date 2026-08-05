@@ -1,0 +1,35 @@
+{
+  "name": "pleno-fullscreen-menu",
+  "title": "PLENO Fullscreen Menu",
+  "description": "배경 딤·메뉴 패널·링크 스태거·장식선이 함께 열리고 닫히는 전체화면 메뉴",
+  "whenToUse": "소수의 상위 경로를 강한 브랜드 장면으로 제시할 때",
+  "tags": [
+    "menu",
+    "overlay",
+    "stagger",
+    "navigation",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-fullscreen-menu.js",
+  "export": "PlenoFullscreenMenu",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoFullscreenMenu(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Global Main overlay",
+  "created": "2026-08-05"
+}

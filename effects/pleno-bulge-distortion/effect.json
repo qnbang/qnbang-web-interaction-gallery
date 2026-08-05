@@ -1,0 +1,35 @@
+{
+  "name": "pleno-bulge-distortion",
+  "title": "PLENO Bulge Distortion",
+  "description": "404 비주얼을 중심점에서 부풀렸다 복원하고 hover 위치로 왜곡 중심을 보간하는 효과",
+  "whenToUse": "404·캠페인 스플래시처럼 한 장의 이미지를 강한 오류 장면으로 만들 때",
+  "tags": [
+    "404",
+    "distortion",
+    "hover",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-bulge-distortion.js",
+  "export": "PlenoBulgeDistortion",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoBulgeDistortion(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — 404 BulgeDistortion",
+  "created": "2026-08-05"
+}

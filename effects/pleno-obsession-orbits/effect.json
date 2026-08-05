@@ -1,0 +1,35 @@
+{
+  "name": "pleno-obsession-orbits",
+  "title": "PLENO Obsession Orbits",
+  "description": "서로 다른 속도와 방향의 원형 레이어가 계속 회전하며 중앙의 가치 문구를 연결하는 모션 그래픽",
+  "whenToUse": "브랜드 가치·원칙을 정적 다이어그램보다 살아 있는 시스템으로 보일 때",
+  "tags": [
+    "orbit",
+    "loop",
+    "brand",
+    "diagram",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-obsession-orbits.js",
+  "export": "PlenoObsessionOrbits",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoObsessionOrbits(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home OBSESSIONS STORYTELLING",
+  "created": "2026-08-05"
+}

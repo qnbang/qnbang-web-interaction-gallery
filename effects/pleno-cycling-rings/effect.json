@@ -1,0 +1,35 @@
+{
+  "name": "pleno-cycling-rings",
+  "title": "PLENO Cycling Rings",
+  "description": "서로 다른 지연을 가진 3축 링이 계속 회전하는 앰비언트 그래픽",
+  "whenToUse": "긴 스크롤 구간의 정적 여백에 낮은 주의도의 생동감을 줄 때",
+  "tags": [
+    "ambient",
+    "rings",
+    "loop",
+    "rotation",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-cycling-rings.js",
+  "export": "PlenoCyclingRings",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoCyclingRings(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home CyclingWave (CyclingRings)",
+  "created": "2026-08-05"
+}

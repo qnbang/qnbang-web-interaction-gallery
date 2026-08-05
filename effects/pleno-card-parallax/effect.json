@@ -1,0 +1,35 @@
+{
+  "name": "pleno-card-parallax",
+  "title": "PLENO Card Parallax",
+  "description": "카드의 포인터 위치에 따라 미디어가 기울고 내부 유체 픽셀 레이어가 반응하는 카드",
+  "whenToUse": "대형 포스터 카드에 링크임을 알리는 촉각적 hover 깊이가 필요할 때",
+  "tags": [
+    "card",
+    "hover",
+    "tilt",
+    "parallax",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-card-parallax.js",
+  "export": "PlenoCardParallax",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoCardParallax(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Artist detail CardParallax",
+  "created": "2026-08-05"
+}

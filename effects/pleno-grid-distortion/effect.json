@@ -1,0 +1,35 @@
+{
+  "name": "pleno-grid-distortion",
+  "title": "PLENO Grid Distortion",
+  "description": "이미지 UV 격자를 포인터 근처에서 휘게 만드는 WebGL 스타일 왜곡",
+  "whenToUse": "히어로·CTA·푸터의 큰 이미지에 국소적인 렌즈 반응을 줄 때",
+  "tags": [
+    "webgl",
+    "grid",
+    "distortion",
+    "pointer",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-grid-distortion.js",
+  "export": "PlenoGridDistortion",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoGridDistortion(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Home, CTA, Footer GridDistortion",
+  "created": "2026-08-05"
+}

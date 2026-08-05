@@ -1,0 +1,35 @@
+{
+  "name": "pleno-directional-navbar",
+  "title": "PLENO Directional Navbar",
+  "description": "아래로 스크롤하면 80px 위로 숨고 위로 스크롤하면 복귀하는 방향 감지 내비게이션",
+  "whenToUse": "긴 페이지에서 화면을 확보하면서 상향 탐색 시 메뉴를 즉시 돌려줄 때",
+  "tags": [
+    "navbar",
+    "scroll-direction",
+    "hide",
+    "reveal",
+    "pleno"
+  ],
+  "framework": "vanilla",
+  "entry": "pleno-directional-navbar.js",
+  "export": "PlenoDirectionalNavbar",
+  "type": "class",
+  "dependencies": {},
+  "demo": "demo.html",
+  "version": "1.0.0",
+  "tech": [
+    "Web Animations API",
+    "CSS transitions",
+    "requestAnimationFrame"
+  ],
+  "api": {
+    "constructor": "new PlenoDirectionalNavbar(root|selector, options)",
+    "methods": [
+      "replay()",
+      "destroy()"
+    ],
+    "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+  },
+  "origin": "https://www.pleno-ent.com/ko/ — Global Navbar",
+  "created": "2026-08-05"
+}

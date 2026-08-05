@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-22T06:47:08.299Z",
-  "count": 20,
+  "generatedAt": "2026-08-05T09:24:13.751Z",
+  "count": 49,
   "effects": [
     {
       "name": "bouncy-accordion",
@@ -696,6 +696,1340 @@
         "effect.json",
         "particle-morph.js",
         "README.md"
+      ]
+    },
+    {
+      "name": "pleno-accordion",
+      "title": "PLENO Accordion",
+      "description": "질문 탭 시 높이·opacity·콘텐츠 y와 plus 아이콘 회전을 함께 전환하는 아코디언",
+      "whenToUse": "문의 페이지의 공지·FAQ처럼 긴 답변을 접어 둘 때",
+      "tags": [
+        "accordion",
+        "height",
+        "icon",
+        "tap",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-accordion.js",
+      "export": "PlenoAccordion",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoAccordion(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Contact Notice / Accordion_1",
+      "created": "2026-08-05",
+      "path": "effects/pleno-accordion",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-accordion.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-animated-counter",
+      "title": "PLENO Animated Counter",
+      "description": "뷰포트 진입 시 숫자를 목표값까지 보간하고 포맷을 유지하는 카운터",
+      "whenToUse": "성과 수치·연도·지표를 정적인 텍스트보다 선명하게 인지시킬 때",
+      "tags": [
+        "number",
+        "counter",
+        "in-view",
+        "tween",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-animated-counter.js",
+      "export": "PlenoAnimatedCounter",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoAnimatedCounter(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — ButtonColor / AnimatedCounter",
+      "created": "2026-08-05",
+      "path": "effects/pleno-animated-counter",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-animated-counter.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-artist-list-hover",
+      "title": "PLENO Artist List Hover",
+      "description": "아티스트 행의 제목 클립·인덱스·화살표·추종 이미지가 하나의 hover 상태로 전환되는 합성 인터랙션",
+      "whenToUse": "아티스트·프로젝트 디렉터리에서 행 전체를 큰 클릭 타깃으로 만들 때",
+      "tags": [
+        "hover",
+        "list",
+        "artist",
+        "variant",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-artist-list-hover.js",
+      "export": "PlenoArtistListHover",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoArtistListHover(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Artists WorkTypeDirection + List Item Default/On Hover",
+      "created": "2026-08-05",
+      "path": "effects/pleno-artist-list-hover",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-artist-list-hover.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-bulge-distortion",
+      "title": "PLENO Bulge Distortion",
+      "description": "404 비주얼을 중심점에서 부풀렸다 복원하고 hover 위치로 왜곡 중심을 보간하는 효과",
+      "whenToUse": "404·캠페인 스플래시처럼 한 장의 이미지를 강한 오류 장면으로 만들 때",
+      "tags": [
+        "404",
+        "distortion",
+        "hover",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-bulge-distortion.js",
+      "export": "PlenoBulgeDistortion",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoBulgeDistortion(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — 404 BulgeDistortion",
+      "created": "2026-08-05",
+      "path": "effects/pleno-bulge-distortion",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-bulge-distortion.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-button-hover-swap",
+      "title": "PLENO Button Hover Swap",
+      "description": "버튼의 전경·배경과 화살표 위치를 hover/tap variant로 교대하는 CTA 피드백",
+      "whenToUse": "CTA와 푸터 링크에서 클릭 가능성을 즉시 강조할 때",
+      "tags": [
+        "button",
+        "hover",
+        "arrow",
+        "cta",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-button-hover-swap.js",
+      "export": "PlenoButtonHoverSwap",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoButtonHoverSwap(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — CTA and Footer ButtonColor",
+      "created": "2026-08-05",
+      "path": "effects/pleno-button-hover-swap",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-button-hover-swap.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-card-parallax",
+      "title": "PLENO Card Parallax",
+      "description": "카드의 포인터 위치에 따라 미디어가 기울고 내부 유체 픽셀 레이어가 반응하는 카드",
+      "whenToUse": "대형 포스터 카드에 링크임을 알리는 촉각적 hover 깊이가 필요할 때",
+      "tags": [
+        "card",
+        "hover",
+        "tilt",
+        "parallax",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-card-parallax.js",
+      "export": "PlenoCardParallax",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoCardParallax(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Artist detail CardParallax",
+      "created": "2026-08-05",
+      "path": "effects/pleno-card-parallax",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-card-parallax.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-character-reveal",
+      "title": "PLENO Character Reveal",
+      "description": "글자를 분해해 아래/오른쪽 이동과 회전을 조합한 스태거 리빌",
+      "whenToUse": "히어로 제목·연도·CTA처럼 한 문장을 강하게 시작할 때",
+      "tags": [
+        "text",
+        "character",
+        "stagger",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-character-reveal.js",
+      "export": "PlenoCharacterReveal",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoCharacterReveal(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Contact, Artist detail, CTA",
+      "created": "2026-08-05",
+      "path": "effects/pleno-character-reveal",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-character-reveal.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-cycling-rings",
+      "title": "PLENO Cycling Rings",
+      "description": "서로 다른 지연을 가진 3축 링이 계속 회전하는 앰비언트 그래픽",
+      "whenToUse": "긴 스크롤 구간의 정적 여백에 낮은 주의도의 생동감을 줄 때",
+      "tags": [
+        "ambient",
+        "rings",
+        "loop",
+        "rotation",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-cycling-rings.js",
+      "export": "PlenoCyclingRings",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoCyclingRings(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home CyclingWave (CyclingRings)",
+      "created": "2026-08-05",
+      "path": "effects/pleno-cycling-rings",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-cycling-rings.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-directional-navbar",
+      "title": "PLENO Directional Navbar",
+      "description": "아래로 스크롤하면 80px 위로 숨고 위로 스크롤하면 복귀하는 방향 감지 내비게이션",
+      "whenToUse": "긴 페이지에서 화면을 확보하면서 상향 탐색 시 메뉴를 즉시 돌려줄 때",
+      "tags": [
+        "navbar",
+        "scroll-direction",
+        "hide",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-directional-navbar.js",
+      "export": "PlenoDirectionalNavbar",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoDirectionalNavbar(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Global Navbar",
+      "created": "2026-08-05",
+      "path": "effects/pleno-directional-navbar",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-directional-navbar.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-flicker-text-reveal",
+      "title": "PLENO Flicker Text Reveal",
+      "description": "문자가 랜덤한 명멸을 거쳐 최종 불투명도로 정착하는 텍스트 리빌",
+      "whenToUse": "캡션·메타데이터에 디지털 질감을 더하되 레이아웃은 움직이지 않을 때",
+      "tags": [
+        "text",
+        "flicker",
+        "random",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-flicker-text-reveal.js",
+      "export": "PlenoFlickerTextReveal",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoFlickerTextReveal(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Artists, Contact, Artist detail AnimatedTextReveal",
+      "created": "2026-08-05",
+      "path": "effects/pleno-flicker-text-reveal",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-flicker-text-reveal.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-fluid-pixels",
+      "title": "PLENO Fluid Pixels",
+      "description": "이미지를 입자 격자로 샘플링해 커서 반발·소용돌이·복귀력으로 변형하는 캔버스 효과",
+      "whenToUse": "로고·인물·그래픽에 직접 만지는 듯한 유기적 반응을 줄 때",
+      "tags": [
+        "canvas",
+        "particles",
+        "pointer",
+        "fluid",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-fluid-pixels.js",
+      "export": "PlenoFluidPixels",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoFluidPixels(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home, Footer, CardParallax FluidPixelsEffect",
+      "created": "2026-08-05",
+      "path": "effects/pleno-fluid-pixels",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-fluid-pixels.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-footer-scroll-rise",
+      "title": "PLENO Footer Scroll Rise",
+      "description": "문서 끝에서 푸터가 아래에 잠겨 있다가 스크롤 진행에 맞춰 상승하는 리빌",
+      "whenToUse": "콘텐츠 끝을 다음 장면처럼 연결하는 대형 푸터에",
+      "tags": [
+        "footer",
+        "scroll",
+        "reveal",
+        "parallax",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-footer-scroll-rise.js",
+      "export": "PlenoFooterScrollRise",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoFooterScrollRise(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Global footer / backup-footer targets",
+      "created": "2026-08-05",
+      "path": "effects/pleno-footer-scroll-rise",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-footer-scroll-rise.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-form-submit-states",
+      "title": "PLENO Form Submit States",
+      "description": "폼의 incomplete·pending·success·error 상태에 따라 버튼 라벨과 진행 피드백을 전환",
+      "whenToUse": "이메일 문의 폼에서 제출 결과를 같은 버튼 자리에서 명확히 알려 줄 때",
+      "tags": [
+        "form",
+        "button",
+        "loading",
+        "state",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-form-submit-states.js",
+      "export": "PlenoFormSubmitStates",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoFormSubmitStates(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Contact Button Form Email",
+      "created": "2026-08-05",
+      "path": "effects/pleno-form-submit-states",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-form-submit-states.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-fullscreen-menu",
+      "title": "PLENO Fullscreen Menu",
+      "description": "배경 딤·메뉴 패널·링크 스태거·장식선이 함께 열리고 닫히는 전체화면 메뉴",
+      "whenToUse": "소수의 상위 경로를 강한 브랜드 장면으로 제시할 때",
+      "tags": [
+        "menu",
+        "overlay",
+        "stagger",
+        "navigation",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-fullscreen-menu.js",
+      "export": "PlenoFullscreenMenu",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoFullscreenMenu(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Global Main overlay",
+      "created": "2026-08-05",
+      "path": "effects/pleno-fullscreen-menu",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-fullscreen-menu.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-grid-distortion",
+      "title": "PLENO Grid Distortion",
+      "description": "이미지 UV 격자를 포인터 근처에서 휘게 만드는 WebGL 스타일 왜곡",
+      "whenToUse": "히어로·CTA·푸터의 큰 이미지에 국소적인 렌즈 반응을 줄 때",
+      "tags": [
+        "webgl",
+        "grid",
+        "distortion",
+        "pointer",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-grid-distortion.js",
+      "export": "PlenoGridDistortion",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoGridDistortion(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home, CTA, Footer GridDistortion",
+      "created": "2026-08-05",
+      "path": "effects/pleno-grid-distortion",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-grid-distortion.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-grid-line-reveal",
+      "title": "PLENO Grid Line Reveal",
+      "description": "세로 그리드 라인이 위쪽 오프셋에서 내려오며 순차적으로 그려지는 구조선 리빌",
+      "whenToUse": "에디토리얼 그리드를 장식이 아니라 장면 전환 장치로 사용할 때",
+      "tags": [
+        "grid",
+        "line",
+        "stagger",
+        "in-view",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-grid-line-reveal.js",
+      "export": "PlenoGridLineReveal",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoGridLineReveal(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — GridLine across all page types",
+      "created": "2026-08-05",
+      "path": "effects/pleno-grid-line-reveal",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-grid-line-reveal.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-hero-parallax",
+      "title": "PLENO Hero Parallax",
+      "description": "첫 화면 헤드라인이 스크롤 속도와 다른 비율로 이동하는 히어로 패럴랙스",
+      "whenToUse": "대형 타이포 히어로에 깊이와 다음 섹션 진입감을 줄 때",
+      "tags": [
+        "hero",
+        "scroll",
+        "parallax",
+        "headline",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-hero-parallax.js",
+      "export": "PlenoHeroParallax",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoHeroParallax(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Artists and Contact hero withFX speed=120",
+      "created": "2026-08-05",
+      "path": "effects/pleno-hero-parallax",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-hero-parallax.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-hover-image-follow",
+      "title": "PLENO Hover Image Follow",
+      "description": "리스트 행을 호버하면 대응 이미지가 커서를 부드럽게 추종하며 진입·퇴장하는 효과",
+      "whenToUse": "텍스트 인덱스에 썸네일 문맥을 추가하면서 목록 밀도를 유지할 때",
+      "tags": [
+        "hover",
+        "cursor",
+        "image",
+        "follow",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-hover-image-follow.js",
+      "export": "PlenoHoverImageFollow",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoHoverImageFollow(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Artists List Item / HoverImageFollow",
+      "created": "2026-08-05",
+      "path": "effects/pleno-hover-image-follow",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-hover-image-follow.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-infinite-spinner",
+      "title": "PLENO Infinite Spinner",
+      "description": "컬렉션 추가 로딩 중 점/링이 반복 회전하고 완료 시 숨겨지는 로더",
+      "whenToUse": "무한 목록의 다음 묶음을 가져오는 동안 작은 진행 상태가 필요할 때",
+      "tags": [
+        "spinner",
+        "loading",
+        "infinite-scroll",
+        "loop",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-infinite-spinner.js",
+      "export": "PlenoInfiniteSpinner",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoInfiniteSpinner(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Artists collection Spinner Loading/Hidden",
+      "created": "2026-08-05",
+      "path": "effects/pleno-infinite-spinner",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-infinite-spinner.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-lenis-smooth-scroll",
+      "title": "PLENO Lenis Smooth Scroll",
+      "description": "휠 입력을 감쇠 보간하는 세로 스무스 스크롤",
+      "whenToUse": "긴 에디토리얼 페이지에서 스크롤과 패럴랙스의 시간축을 안정화할 때",
+      "tags": [
+        "scroll",
+        "lenis",
+        "inertia",
+        "smooth",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-lenis-smooth-scroll.js",
+      "export": "PlenoLenisSmoothScroll",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoLenisSmoothScroll(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — All routes — Lenis smooth=true, intensity=12",
+      "created": "2026-08-05",
+      "path": "effects/pleno-lenis-smooth-scroll",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-lenis-smooth-scroll.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-mask-down-image-reveal",
+      "title": "PLENO Mask-down Image Reveal",
+      "description": "이미지 마스크가 위에서 아래로 열리고 내부 이미지는 미세하게 역이동하는 리빌",
+      "whenToUse": "문의·소개 페이지의 단일 키 비주얼을 장면처럼 공개할 때",
+      "tags": [
+        "image",
+        "mask",
+        "scroll",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-mask-down-image-reveal.js",
+      "export": "PlenoMaskDownImageReveal",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoMaskDownImageReveal(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Contact ScrollRevealImage",
+      "created": "2026-08-05",
+      "path": "effects/pleno-mask-down-image-reveal",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-mask-down-image-reveal.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-obsession-orbits",
+      "title": "PLENO Obsession Orbits",
+      "description": "서로 다른 속도와 방향의 원형 레이어가 계속 회전하며 중앙의 가치 문구를 연결하는 모션 그래픽",
+      "whenToUse": "브랜드 가치·원칙을 정적 다이어그램보다 살아 있는 시스템으로 보일 때",
+      "tags": [
+        "orbit",
+        "loop",
+        "brand",
+        "diagram",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-obsession-orbits.js",
+      "export": "PlenoObsessionOrbits",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoObsessionOrbits(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home OBSESSIONS STORYTELLING",
+      "created": "2026-08-05",
+      "path": "effects/pleno-obsession-orbits",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-obsession-orbits.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-page-loader-sequence",
+      "title": "PLENO Page Loader Sequence",
+      "description": "첫 방문에서 브랜드 워드마크를 마스킹·슬라이드하고 본문을 인계하는 3단 로더",
+      "whenToUse": "홈 최초 진입의 브랜드 인트로와 초기 자산 로딩 지연을 하나의 연출로 감출 때",
+      "tags": [
+        "loader",
+        "intro",
+        "mask",
+        "sequence",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-page-loader-sequence.js",
+      "export": "PlenoPageLoaderSequence",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoPageLoaderSequence(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home / Loading — Start → On Mount → End, desktop/mobile variants",
+      "created": "2026-08-05",
+      "path": "effects/pleno-page-loader-sequence",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-page-loader-sequence.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-parallax-media",
+      "title": "PLENO Parallax Media",
+      "description": "클리핑된 프레임 안의 이미지가 세로 스크롤에 반대 방향으로 이동하는 미디어 패럴랙스",
+      "whenToUse": "아티스트 카드와 상세 이미지에 깊이를 주되 프레임 위치는 고정할 때",
+      "tags": [
+        "media",
+        "image",
+        "scroll",
+        "parallax",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-parallax-media.js",
+      "export": "PlenoParallaxMedia",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoParallaxMedia(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Work Slide Media, CardParallax, Artist detail",
+      "created": "2026-08-05",
+      "path": "effects/pleno-parallax-media",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-parallax-media.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-route-transition",
+      "title": "PLENO Route Transition",
+      "description": "페이지 이동 시 새 화면은 아래 20%에서 들어오고 이전 화면은 위 20%로 사라지는 전역 전환",
+      "whenToUse": "콘텐츠 중심 멀티 페이지 사이트에서 이동 방향감을 통일할 때",
+      "tags": [
+        "route",
+        "transition",
+        "slide",
+        "fade",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-route-transition.js",
+      "export": "PlenoRouteTransition",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoRouteTransition(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Global PageEffectsProvider",
+      "created": "2026-08-05",
+      "path": "effects/pleno-route-transition",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-route-transition.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-scroll-fade-in",
+      "title": "PLENO Scroll Fade In",
+      "description": "요소가 뷰포트 임계점에 닿을 때 opacity를 올리는 기본 섹션 등장",
+      "whenToUse": "텍스트·카드·폼 블록의 정보 위계를 순차적으로 드러낼 때",
+      "tags": [
+        "scroll",
+        "in-view",
+        "fade",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-scroll-fade-in.js",
+      "export": "PlenoScrollFadeIn",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoScrollFadeIn(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home, Artists, Contact, Detail generated appear effects",
+      "created": "2026-08-05",
+      "path": "effects/pleno-scroll-fade-in",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-scroll-fade-in.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-slideshow",
+      "title": "PLENO Slideshow",
+      "description": "자동재생·화살표·드래그·무한 순환을 지원하는 가로 슬라이드쇼",
+      "whenToUse": "뉴스·프레스·이미지 카드 묶음을 한 뷰에서 넘길 때",
+      "tags": [
+        "carousel",
+        "slideshow",
+        "drag",
+        "autoplay",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-slideshow.js",
+      "export": "PlenoSlideshow",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoSlideshow(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home press/news: 3 responsive instances",
+      "created": "2026-08-05",
+      "path": "effects/pleno-slideshow",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-slideshow.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-text-mask-reveal",
+      "title": "PLENO Text Mask Reveal",
+      "description": "줄 단위 마스크 안에서 텍스트가 위로 열리는 인뷰 리빌",
+      "whenToUse": "문장형 선언문과 섹션 헤드라인을 절제해서 등장시킬 때",
+      "tags": [
+        "text",
+        "mask",
+        "in-view",
+        "reveal",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-text-mask-reveal.js",
+      "export": "PlenoTextMaskReveal",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoTextMaskReveal(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Home and Artist detail TextMask",
+      "created": "2026-08-05",
+      "path": "effects/pleno-text-mask-reveal",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-text-mask-reveal.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
+      ]
+    },
+    {
+      "name": "pleno-underline-hover-link",
+      "title": "PLENO Underline Hover Link",
+      "description": "밑줄이 한쪽으로 빠진 뒤 반대편에서 다시 그려지는 링크 hover",
+      "whenToUse": "전화·메뉴·푸터처럼 반복되는 텍스트 링크에 일관된 피드백을 줄 때",
+      "tags": [
+        "link",
+        "hover",
+        "underline",
+        "wipe",
+        "pleno"
+      ],
+      "framework": "vanilla",
+      "entry": "pleno-underline-hover-link.js",
+      "export": "PlenoUnderlineHoverLink",
+      "type": "class",
+      "dependencies": {},
+      "demo": "demo.html",
+      "version": "1.0.0",
+      "tech": [
+        "Web Animations API",
+        "CSS transitions",
+        "requestAnimationFrame"
+      ],
+      "api": {
+        "constructor": "new PlenoUnderlineHoverLink(root|selector, options)",
+        "methods": [
+          "replay()",
+          "destroy()"
+        ],
+        "options": "speed 등 효과별 소수 옵션; CSS custom properties로 시각값 재정의"
+      },
+      "origin": "https://www.pleno-ent.com/ko/ — Global menu/footer, Contact, 404",
+      "created": "2026-08-05",
+      "path": "effects/pleno-underline-hover-link",
+      "hasDemo": true,
+      "hasPreview": false,
+      "files": [
+        "demo.html",
+        "effect.json",
+        "pleno-underline-hover-link.js",
+        "README.md",
+        "runtime.js",
+        "style.css"
       ]
     },
     {
